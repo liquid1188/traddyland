@@ -279,3 +279,5 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
   .press-strip img.short { height: 26px; }
   .press-strip a.forth span { left: 50%; transform: translateX(-50%); white-space: nowrap; }
 }
+.site-foot.v2 .util a.totop { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 0; }
+.site-foot.v2 .util a.totop svg { width: 16px; height: 16px; display: block; }
