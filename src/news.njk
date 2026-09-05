@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: Background reading
+permalink: /news/
+description: "Reporting on the Society of St. Pius X and St. Marys, Kansas, from 1983 to the 2026 consecrations."
+---
+<div class="wrap page-head">
+  <h1>Background reading</h1>
+  <p class="lede">The reporting behind the book. Four decades of coverage of the Society of St. Pius X and the town of St. Marys, Kansas, selected by Lou.</p>
+</div>
+<section class="band" style="padding-top:1.5rem">
+  <div class="wrap">
+    <ul class="news">
+    {%- for n in collections.news %}
+      <li><a href="{{ n.data.url }}">
+        <span class="date">{{ n | iso | longDate }}</span>
+        <span><h3>{{ n.data.title }}</h3><p>{{ n.templateContent | striptags | trim }}</p><span class="src">{{ n.data.source }} →</span></span>
+      </a></li>
+    {%- endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: liquid1188/traddyland
+  branch: main
+media_folder: src/images
+public_folder: /images
+collections:
+  - name: news
+    label: Background reading
+    label_singular: Article
+    folder: src/news
+    create: true
+    slug: "{{fields.date}}-{{slug}}"
+    summary: "{{date}} · {{title}} · {{source}}"
+    fields:
+      - { name: title, label: Headline }
+      - { name: date, label: Date published, widget: datetime, time_format: false, format: "YYYY-MM-DD" }
+      - { name: source, label: Outlet }
+      - { name: url, label: Link }
+      - { name: body, label: One-line summary, widget: text }
+      - { name: tags, widget: hidden, default: news }

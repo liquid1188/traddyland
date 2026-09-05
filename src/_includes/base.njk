@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}Traddyland by Lou Massett</title>
+  <meta name="description" content="{{ description or site.tagline }}">
+  {% if site.setupMode %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v={{ buildId }}">
+  <meta property="og:title" content="{{ title or 'Traddyland' }}">
+  <meta property="og:description" content="{{ description or site.tagline }}">
+  <meta property="og:image" content="{{ site.url }}/images/cover.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Traddyland: Memoir of a Radical Traditional Catholic","author":{"@type":"Person","name":"Louis Massett"},"isbn":"9798996501410","bookFormat":"Paperback","url":"{{ site.url }}","offers":{"@type":"Offer","url":"{{ site.amazon }}"}}</script>
+</head>
+<body{% if page.url == "/" %} class="home"{% endif %}>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="/">Traddyland</a>
+    <input type="checkbox" id="menu" class="menu-toggle" aria-label="Open menu">
+    <label for="menu" class="menu-btn"><span></span><span></span></label>
+    <nav class="nav" aria-label="Main">
+      <a href="/book/"{% if page.url == '/book/' %} aria-current="page"{% endif %}>The book</a>
+      <a href="/about/"{% if page.url == '/about/' %} aria-current="page"{% endif %}>Lou Massett</a>
+      <a href="/press/"{% if page.url == '/press/' %} aria-current="page"{% endif %}>Press</a>
+      <a href="/podcast/"{% if page.url == '/podcast/' %} aria-current="page"{% endif %}>Podcast</a>
+      <a href="/news/"{% if '/news' in page.url %} aria-current="page"{% endif %}>Background</a>
+      <a href="/contact/"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>Contact</a>
+      <a class="btn small" href="{{ site.amazon }}">Buy the book</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{{ content | safe }}
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand">Traddyland</p>
+      <p class="foot-tag">Memoir of a Radical Traditional Catholic. By Louis Massett. Available in English and Spanish.</p>
+    </div>
+    <div>
+      <h3>The book</h3>
+      <a href="/book/">About the book</a>
+      <a href="/book/#buy">Where to buy</a>
+      <a href="/book/#excerpt">Read Act I free</a>
+      <a href="/press/">Press and reviews</a>
+    </div>
+    <div>
+      <h3>Lou</h3>
+      <a href="/about/">Biography</a>
+      <a href="/about/#speaking">Interviews and speaking</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/news/">Background reading</a>
+    </div>
+    <div>
+      <h3>Connect</h3>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a href="{{ site.social.instagram }}">Instagram</a>
+      <a href="{{ site.social.facebook }}">Facebook</a>
+      <a href="{{ site.social.x }}">X</a>
+      <a href="{{ site.social.youtube }}">YouTube</a>
+    </div>
+  </div>
+  <div class="wrap foot-small">
+    <span>&copy; {{ today | year }} Louis Massett. All rights reserved.</span>
+    <span><a href="/support/">Support the work</a> · <a href="/privacy/">Privacy</a> · <a href="/admin/">Sign in</a></span>
+  </div>
+</footer>
+</body>
+</html>

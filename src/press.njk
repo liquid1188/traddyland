@@ -1,0 +1,40 @@
+---
+layout: base.njk
+title: Press
+permalink: /press/
+description: "Traddyland in the press: Newsweek, the National Catholic Reporter, UnHerd, and Where Peter Is."
+---
+<div class="wrap page-head">
+  <h1>Press</h1>
+  <p class="lede">Coverage of the book and of Lou's account of the Society of St. Pius X. For interview requests, write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+</div>
+<section class="band" style="padding-top:1.5rem">
+  <div class="wrap press-list">
+  {%- for p in press %}
+    <a class="press-item" href="{{ p.url }}">
+      <img src="{{ p.logo }}" alt="{{ p.outlet }}">
+      <div>
+        <h3>{{ p.title }}</h3>
+        <p class="meta">{{ p.outlet }} · {{ p.date }}</p>
+        <p>{{ p.note }}</p>
+      </div>
+    </a>
+  {%- endfor %}
+  </div>
+</section>
+<section class="band white">
+  <div class="wrap two-col top">
+    <div>
+      <h2>Press kit</h2>
+      <p>Author photo, cover art, short and long bios, and sample questions. Download or write for anything else.</p>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap">
+        <a class="btn ghost" href="/images/lou-massett.jpg" download>Author photo</a>
+        <a class="btn ghost" href="/images/cover.png" download>Cover art</a>
+        <a class="btn ghost" href="/about/#speaking">Short bio</a>
+      </div>
+    </div>
+    <div class="praise" style="grid-template-columns:1fr">
+      <blockquote>{{ praise[0].quote }}<cite>{{ praise[0].who }}</cite></blockquote>
+    </div>
+  </div>
+</section>

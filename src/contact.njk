@@ -1,0 +1,29 @@
+---
+layout: base.njk
+title: Contact
+permalink: /contact/
+description: "Write to Lou Massett about Traddyland, interviews, speaking, or your own story."
+---
+<div class="wrap page-head">
+  <h1>Contact</h1>
+  <p class="lede">For interviews, speaking, book clubs, or to tell Lou your own story. Everything goes to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+</div>
+<section class="band" style="padding-top:1.5rem">
+  <div class="wrap two-col top">
+    <form class="form" action="https://formsubmit.co/{{ site.email }}" method="POST">
+      <input type="hidden" name="_subject" value="Message from traddyland.com">
+      <input type="hidden" name="_next" value="{{ site.url }}/thanks/">
+      <label>Name <input type="text" name="name" required></label>
+      <label>Email <input type="email" name="email" required></label>
+      <label>This is about
+        <select name="topic"><option>An interview or podcast</option><option>A speaking invitation</option><option>A book club or reading group</option><option>My own story</option><option>Something else</option></select>
+      </label>
+      <label>Message <textarea name="message" rows="6" required></textarea></label>
+      <button class="btn" type="submit">Send</button>
+    </form>
+    <div class="prose">
+      <h3>If you grew up in it</h3>
+      <p>A lot of the mail Lou gets is from people who were raised in the Society or a movement like it and have never said so out loud. Those letters are read first and answered personally. Nothing you write is shared.</p>
+    </div>
+  </div>
+</section>

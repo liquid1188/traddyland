@@ -1,0 +1,95 @@
+---
+layout: base.njk
+permalink: /
+description: "Traddyland is Lou Massett's memoir of growing up inside the Society of St. Pius X, its boarding school in St. Marys, Kansas, and what it took to leave. Featured in Newsweek, the National Catholic Reporter, and UnHerd."
+---
+<section class="hero on-dark">
+  <img class="bg" src="/images/video-cost.jpg" alt="" width="1280" height="720" fetchpriority="high">
+  <video class="bg" autoplay muted loop playsinline poster="/images/video-cost.jpg" aria-hidden="true"><source src="/video/what-does-it-cost.mp4" type="video/mp4"></video>
+  <div class="wrap">
+    <div>
+      <p class="kicker">A memoir by Lou Massett</p>
+      <h1>He was thirteen when they put him on the bus to Kansas.</h1>
+      <p class="lede">Traddyland is the story of a boy raised inside the Society of St. Pius X, five years at its boarding school in St. Marys, and the thirty years it took to understand what happened there, to his family, and to the country that produced him.</p>
+      <div class="hero-actions">
+        <a class="btn" href="{{ site.amazon }}">Buy the book</a>
+        <a class="btn ghost" href="/book/#excerpt">Read Act I free</a>
+      </div>
+    </div>
+    <a href="/book/"><img class="cover" src="/images/cover.png" alt="Traddyland: The Memoir of a Radical Traditional Catholic, by Louis Massett" width="771" height="1416"></a>
+  </div>
+</section>
+
+{% include "press-strip.njk" %}
+
+<section class="band">
+  <div class="wrap two-col top">
+    <div class="prose">
+      <h2>Why this story matters now.</h2>
+      <p class="dropcap">For half a century a breakaway faction of the Catholic Church has operated in the seams of Western institutions, outside the authority of Rome and off the radar of the press. The Society of St. Pius X has produced a Holocaust-denying bishop expelled by his own order, a flagship boarding school whose alumni include a Republic of Texas militiaman, and a chapel that hosted Timothy McVeigh four days before Oklahoma City. On July 1, 2026, it consecrated four bishops without a papal mandate. On July 2, Pope Leo XIV declared the Society in schism.</p>
+      <p>Lou Massett was raised inside all of it. He went to school with one of the four new bishops. <em>Traddyland</em> is the first book to tell that story from the inside.</p>
+      <p>The world of the book is specific. The pattern it traces is not. If you have ever watched someone you love disappear into an ideology, or felt that pull yourself, this story will feel familiar.</p>
+      <a class="textlink" href="/book/">About the book →</a>
+    </div>
+    <figure style="margin:0">
+      <img src="/images/st-marys-campus.jpg" alt="The former Jesuit campus at St. Marys, Kansas, now the SSPX's flagship school" width="2856" height="1607" loading="lazy">
+      <figcaption class="caption">St. Marys, Kansas. The campus where Lou spent five years, and where four decades of American traditionalism took shape.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band dusk on-dark">
+  <div class="wrap">
+    <h2>How it happens.</h2>
+    <div class="movements">
+      <div><p class="num">One</p><h3>Certainty becomes identity</h3><p>How belief stops being something you hold and starts being who you are.</p></div>
+      <div><p class="num">Two</p><h3>Identity becomes division</h3><p>The quiet sorting of the world into us and them, by family, faith, and tribe.</p></div>
+      <div><p class="num">Three</p><h3>Division reshapes community</h3><p>What it costs, and what survives, when we choose closeness over correctness.</p></div>
+      <div><p class="num">Four</p><h3>Finding a way back</h3><p>Not a renunciation but a reckoning. What it takes to keep loving what you can no longer believe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band white">
+  <div class="wrap">
+    <div class="band-head"><h2>What readers are saying</h2><a class="textlink" href="/press/">Press and reviews →</a></div>
+    <div class="praise">
+    {%- for q in praise %}
+      <blockquote>{{ q.quote }}<cite>{{ q.who }}</cite></blockquote>
+    {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap two-col">
+    <img class="portrait" src="/images/lou-massett.jpg" alt="Lou Massett" width="724" height="1086" loading="lazy" style="max-width:420px">
+    <div>
+      <h2>A writer working from inside the world he is trying to understand.</h2>
+      <p class="lede">Lou Massett was raised in the Society of St. Pius X and spent five years at its boarding school in Kansas. He left the movement in his early twenties and spent the next thirty years working out what had happened. <em>Traddyland</em> is his first book.</p>
+      <p>In July 2026 Newsweek quoted him on the human cost of the excommunications. His essay on St. Marys ran in UnHerd the same month.</p>
+      <a class="btn ghost" href="/about/">Read the full biography</a>
+    </div>
+  </div>
+</section>
+
+<section class="band dusk on-dark">
+  <div class="wrap">
+    <div class="band-head"><h2>A first look at the book</h2></div>
+    <video class="feature" controls preload="none" poster="/images/video-first-look.jpg" width="1920" height="1080"><source src="/video/first-look.mp4" type="video/mp4"></video>
+    <p class="caption">A short introduction to the story, the family behind it, and the questions it asks.</p>
+  </div>
+</section>
+
+<section class="band white">
+  <div class="wrap two-col">
+    <div>
+      <h2>Are You Serious? A podcast on faith, culture, and radical ideas.</h2>
+      <p class="lede">The Traddyland podcast extends the book into conversation, about faith, family, ideology, and the long road out of certainty. Hosted by Lou Massett. First episodes coming this fall.</p>
+      <a class="textlink" href="/podcast/">About the podcast →</a>
+    </div>
+    <img src="/images/podcast-are-you-serious.jpg" alt="Are You Serious? podcast artwork" width="1024" height="1024" loading="lazy" style="width:100%;max-width:380px;justify-self:center">
+  </div>
+</section>
+
+{% include "signup.njk" %}

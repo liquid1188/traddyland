@@ -1,0 +1,67 @@
+---
+layout: base.njk
+title: The book
+permalink: /book/
+description: "Traddyland: Memoir of a Radical Traditional Catholic. Synopsis, praise, a free excerpt, and where to buy."
+---
+<div class="wrap page-head">
+  <h1>Traddyland</h1>
+  <p class="lede">Memoir of a Radical Traditional Catholic. Paperback, Kindle, and a Spanish edition. 500 pages.</p>
+</div>
+<section class="band" style="padding-top:1.5rem">
+  <div class="wrap two-col top">
+    <div class="prose">
+      <p class="dropcap">By the age of thirteen, Lou Massett had been sent from his devout Catholic family in Bridgeport, New York, to St. Mary's Academy in St. Marys, Kansas, the flagship boarding school of the Society of St. Pius X. It was the late 1980s. Archbishop Lefebvre had just consecrated four bishops against the will of Rome, and Lou's father had wept for six weeks.</p>
+      <p>What followed was five years inside an institution built for certainty: the rules, the silences, the blanket parties, the priests. Around the school, the town of St. Marys was becoming a hub of American traditionalism and, in the years before Oklahoma City, a place federal agents combed for links to the militia movement. Lou came of age at the intersection of the two.</p>
+      <p>He left in his early twenties. The next thirty years went to understanding what had happened to the boy on the bus, to his family, and to the country that produced him. When an FBI memo in 2023 named SSPX parishes as a domestic threat vector, and when Rome declared the Society in schism in July 2026, the story he had been writing for six years became the news.</p>
+      <p><em>Traddyland</em> is not an exposé and not a settling of scores. It is a memoir of inheritance, fracture, and the cost of seeing clearly: how a community you love can become a place you cannot stay, and what it takes to keep loving what you can no longer believe.</p>
+      <blockquote>Faith without charity became a dangerous, clanging cymbal.<br><span style="font-size:.9rem;font-style:normal;color:var(--ink-2)">Traddyland, page 495</span></blockquote>
+    </div>
+    <div>
+      <img src="/images/cover.png" alt="Traddyland cover" width="771" height="1416" style="width:100%;max-width:340px;box-shadow:0 24px 50px -20px rgba(0,0,0,.5)">
+      <div class="facts" style="margin-top:1.5rem;max-width:340px">
+        <dl>
+          <dt>Author</dt><dd>Louis Massett</dd>
+          <dt>Published</dt><dd>June 2026</dd>
+          <dt>Pages</dt><dd>About 500</dd>
+          <dt>ISBN</dt><dd>979-8-9965014-1-0</dd>
+          <dt>Editions</dt><dd>Paperback, Kindle, Spanish</dd>
+        </dl>
+        <a class="btn" href="{{ site.amazon }}" style="display:block;text-align:center;margin-top:1.2rem">Buy on Amazon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band dusk on-dark">
+  <div class="wrap">
+    <h2>Four movements through the story.</h2>
+    <div class="movements">
+      <div><p class="num">I</p><h3>The boarding school in Kansas</h3><p>Five formative years inside an institution built for certainty. The rules, the silences, and what they shaped.</p></div>
+      <div><p class="num">II</p><h3>When ideology becomes love</h3><p>The moment correctness begins to substitute for closeness, and the long road back from it.</p></div>
+      <div><p class="num">III</p><h3>A family formed by belief</h3><p>How a household becomes a small country, and what it costs to leave one of its borders.</p></div>
+      <div><p class="num">IV</p><h3>Finding your way back</h3><p>Not a renunciation but a reckoning. What it takes to keep loving what you can no longer believe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band white">
+  <div class="wrap">
+    <div class="band-head"><h2>Praise</h2><a class="textlink" href="/press/">Full press coverage →</a></div>
+    <div class="praise">
+    {%- for q in praise %}<blockquote>{{ q.quote }}<cite>{{ q.who }}</cite></blockquote>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="band" id="buy">
+  <div class="wrap">
+    <div class="band-head"><h2>Where to buy</h2></div>
+    <div class="buy">
+    {%- for b in buy %}<a href="{{ b.url }}"><strong>{{ b.name }}</strong><span>{{ b.note }}</span></a>{% endfor %}
+    </div>
+    <p style="margin-top:1.5rem;color:var(--ink-2)">If the book moves you, the single most helpful thing you can do is leave an honest review on Amazon when you finish. That is how memoirs find their readers.</p>
+  </div>
+</section>
+
+{% include "signup.njk" %}
