@@ -15,6 +15,20 @@
   <meta property="og:description" content="{{ description or site.tagline }}">
   <meta property="og:image" content="{{ site.url }}/images/cover.jpg">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Traddyland: Memoir of a Radical Traditional Catholic","author":{"@type":"Person","name":"Louis Massett"},"isbn":"9798996501410","bookFormat":"Paperback","url":"{{ site.url }}","offers":{"@type":"Offer","url":"{{ site.amazon }}"}}</script>
+  {%- if site.ga4 and not site.setupMode %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}"></script>
+  <script>
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ site.ga4 }}',{anonymize_ip:true});
+  document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=a.textContent.trim().slice(0,60);
+    if(/amazon\.com/.test(h))gtag('event','buy_click',{retailer:'amazon',link_text:t,page:location.pathname});
+    else if(/bookshop\.org|barnesandnoble\.com|apple\.com/.test(h))gtag('event','buy_click',{retailer:h.match(/bookshop|barnesandnoble|apple/)[0],link_text:t,page:location.pathname});
+    else if(/^mailto:/.test(h))gtag('event','email_click',{link_text:t,page:location.pathname});
+    else if(/newsweek|ncronline|unherd|wherepeteris|elespanol|hprweb/.test(h))gtag('event','press_click',{outlet:a.getAttribute('title')||h,page:location.pathname});
+    else if(/youtube\.com|youtu\.be|podcasts\.apple|spotify/.test(h))gtag('event','media_click',{link_url:h,page:location.pathname});
+  });
+  document.addEventListener('submit',function(e){var f=e.target;if(f.action&&/formsubmit/.test(f.action))gtag('event',f.closest('.signup')?'newsletter_signup':'contact_submit',{page:location.pathname});});
+  </script>
+  {%- endif %}
 </head>
 <body{% if page.url == "/" %} class="home"{% endif %}>
 <a class="skip" href="#main">Skip to content</a>

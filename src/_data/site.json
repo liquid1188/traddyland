@@ -8,5 +8,13 @@
   "email": "louis@traddyland.com",
   "amazon": "https://www.amazon.com/Traddyland-Memoir-Radical-Traditional-Catholic/dp/B0H4XPJWC8",
   "amazonKindle": "https://www.amazon.com/Traddyland-Memoir-Radical-Traditional-Catholic-ebook/dp/B0H3GBKF75",
-  "social": { "instagram": "https://www.instagram.com/traddyland/", "facebook": "https://www.facebook.com/traddyland", "x": "https://x.com/traddyland", "youtube": "https://www.youtube.com/@traddyland", "tiktok": "https://www.tiktok.com/@traddyland", "linkedin": "https://www.linkedin.com/in/louis-massett/" }
+  "social": {
+    "instagram": "https://www.instagram.com/traddyland/",
+    "facebook": "https://www.facebook.com/traddyland",
+    "x": "https://x.com/traddyland",
+    "youtube": "https://www.youtube.com/@traddyland",
+    "tiktok": "https://www.tiktok.com/@traddyland",
+    "linkedin": "https://www.linkedin.com/in/louis-massett/"
+  },
+  "ga4": ""
 }
