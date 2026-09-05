@@ -12,7 +12,7 @@ description: "Lou Massett's posts on the SSPX, the schism, leaving high-control 
     {%- for p in collections.posts %}
       <li><a href="{{ p.url }}">
         <span class="date">{{ p | iso | longDate }}</span>
-        <span><h3>{{ p.data.title }}</h3>{% if p.data.author %}<p class="byline">By {{ p.data.author }}</p>{% endif %}<p>{{ p.data.lede or (p.templateContent | striptags | trim | truncate(180)) }}</p><span class="src">Read{% if p.data.comments and p.data.comments.length %} · {{ p.data.comments.length }} comment{% if p.data.comments.length != 1 %}s{% endif %}{% endif %} →</span></span>
+        <span><h3>{{ p.data.title }}</h3>{% if p.data.author %}<p class="byline">By {{ p.data.author }}</p>{% endif %}<p>{{ p.data.lede or (p.templateContent | plain | truncate(180)) }}</p><span class="src">Read{% if p.data.comments and p.data.comments.length %} · {{ p.data.comments.length }} comment{% if p.data.comments.length != 1 %}s{% endif %}{% endif %} →</span></span>
       </a></li>
     {%- endfor %}
     </ul>

@@ -9,6 +9,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("longDate", (iso) => d(iso).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", ...opts }));
   eleventyConfig.addFilter("urlencode", (t) => encodeURIComponent(t || ""));
   eleventyConfig.addFilter("undated", (t) => (t || "").replace(/^\d{4}-\d{2}-\d{2}-/, ""));
+  eleventyConfig.addFilter("plain", (h) => (h || "").replace(/<[^>]+>/g, " ").replace(/&quot;/g, "\"").replace(/&#39;|&apos;/g, "'").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim());
   eleventyConfig.addFilter("md", (t) => mdlib.render(t || ""));
   eleventyConfig.addFilter("mdinline", (t) => mdlib.renderInline(t || ""));
   eleventyConfig.addFilter("dropcap", (h) => (h || "").replace("<p>", '<p class="dropcap">'));

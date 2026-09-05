@@ -18,7 +18,7 @@ description: "Reporting on the Society of St. Pius X and St. Marys, Kansas, from
     {%- for n in collections.news %}
       <li><a href="{{ n.data.url }}">
         <span class="date">{{ n | iso | longDate }}</span>
-        <span><h3>{{ n.data.title }}</h3><p>{{ n.templateContent | striptags | trim }}</p><span class="src">{{ n.data.source }} →</span></span>
+        <span><h3>{{ n.data.title }}</h3><p>{{ n.templateContent | plain }}</p><span class="src">{{ n.data.source }} →</span></span>
       </a></li>
     {%- endfor %}
     </ul>
