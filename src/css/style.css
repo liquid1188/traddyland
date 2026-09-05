@@ -86,6 +86,7 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .press-strip a:hover { opacity: 1; }
 .press-strip img { height: 26px; width: auto; }
 .press-strip img.tall { height: 34px; }
+.press-strip img.short { height: 20px; }
 
 /* bands */
 .band { padding: clamp(3.5rem, 7vw, 6rem) 0; }

@@ -1,6 +1,43 @@
 [
- {"outlet":"Newsweek","logo":"/images/logo-newsweek.svg","url":"https://www.newsweek.com/sspx-member-says-pope-leo-excommunication-will-strengthen-rebel-group-12178549","date":"July 11, 2026","title":"SSPX Member Says Pope Leo Excommunication Will Strengthen Rebel Group","note":"Lou Massett on the human cost of the excommunications for SSPX families."},
- {"outlet":"National Catholic Reporter","logo":"/images/logo-ncr.png","url":"https://www.ncronline.org/news/former-sspx-member-says-unity-catholicism-means-more-valid-ordinations","date":"August 2026","title":"Former SSPX member says unity with Catholicism means more than valid ordinations","note":"A profile of Lou and the book in the weeks after the Écône consecrations."},
- {"outlet":"UnHerd","logo":"/images/logo-unherd-dark.png","logoDark":"/images/logo-unherd.png","url":"https://unherd.com/2026/07/escape-from-trad-land/","date":"July 24, 2026","title":"Escape from Trad-Land","note":"Lou's own essay on St. Marys, Kansas, and what he saw at the boarding school."},
- {"outlet":"Where Peter Is","logo":"/images/logo-wpi.png","url":"https://wherepeteris.com/traddyland-a-memoir-the-church-needs-now/","date":"July 16, 2026","title":"Traddyland: A Memoir the Church Needs Now","note":"A full review. \"Faith without charity became a dangerous, clanging cymbal.\""}
+ {
+  "outlet": "Newsweek",
+  "logo": "/images/logo-newsweek.svg",
+  "url": "https://www.newsweek.com/sspx-member-says-pope-leo-excommunication-will-strengthen-rebel-group-12178549",
+  "date": "July 11, 2026",
+  "title": "SSPX Member Says Pope Leo Excommunication Will Strengthen Rebel Group",
+  "note": "Lou on the human cost of the excommunications for SSPX families. Newsweek quoted him again on July 16 in its report on the Society's list of papal 'errors'."
+ },
+ {
+  "outlet": "El Español",
+  "logo": "/images/logo-elespanol.svg",
+  "url": "https://www.elespanol.com/reportajes/20260627/leon-xiv-cisma-tradicionalistas-sociedad-san-pio-dan-misa-latin-quieren-propios-obispos/1003744301778_0.html",
+  "date": "June 27, 2026",
+  "title": "León XIV, ante el cisma de los 'tradicionalistas' de la Sociedad de San Pío X",
+  "note": "A long report from Spain on the eve of the consecrations, with Lou's story of his family joining the Society in 1982. Republished in English by Where Peter Is."
+ },
+ {
+  "outlet": "National Catholic Reporter",
+  "logo": "/images/logo-ncr.png",
+  "url": "https://www.ncronline.org/news/former-sspx-member-says-unity-catholicism-means-more-valid-ordinations",
+  "date": "August 2026",
+  "title": "Former SSPX member says unity with Catholicism means more than valid ordinations",
+  "note": "A profile of Lou and the book in the weeks after the Écône consecrations."
+ },
+ {
+  "outlet": "UnHerd",
+  "logo": "/images/logo-unherd-dark.png",
+  "logoDark": "/images/logo-unherd.png",
+  "url": "https://unherd.com/2026/07/escape-from-trad-land/",
+  "date": "July 24, 2026",
+  "title": "Escape from Trad-Land",
+  "note": "Lou's own essay on St. Marys, Kansas, and what he saw at the boarding school."
+ },
+ {
+  "outlet": "Where Peter Is",
+  "logo": "/images/logo-wpi.png",
+  "url": "https://wherepeteris.com/traddyland-a-memoir-the-church-needs-now/",
+  "date": "July 16, 2026",
+  "title": "Traddyland: A Memoir the Church Needs Now",
+  "note": "A full review. \"Faith without charity became a dangerous, clanging cymbal.\""
+ }
 ]

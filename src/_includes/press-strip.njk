@@ -1,6 +1,6 @@
 <div class="press-strip">
   <div class="wrap">
     <p class="label">As featured in</p>
-    {%- for p in press %}<a href="{{ p.url }}" title="{{ p.outlet }}: {{ p.title }}"><img src="{{ p.logo }}" alt="{{ p.outlet }}"{% if p.outlet == 'Where Peter Is' %} class="tall"{% endif %}></a>{% endfor %}
+    {%- for p in press %}<a href="{{ p.url }}" title="{{ p.outlet }}: {{ p.title }}"><img src="{{ p.logo }}" alt="{{ p.outlet }}"{% if p.outlet == 'Where Peter Is' %} class="tall"{% elif p.outlet == 'El Español' %} class="short"{% endif %}></a>{% endfor %}
   </div>
 </div>
