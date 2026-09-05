@@ -39,5 +39,14 @@
   "date": "July 16, 2026",
   "title": "Traddyland: A Memoir the Church Needs Now",
   "note": "A full review. \"Faith without charity became a dangerous, clanging cymbal.\""
+ },
+ {
+  "outlet": "Homiletic & Pastoral Review",
+  "logo": "/images/logo-hpr.png",
+  "url": "https://www.hprweb.com/",
+  "date": "October 2026",
+  "title": "Review of Traddyland",
+  "note": "A full review of the book, forthcoming in the October issue.",
+  "forthcoming": true
  }
 ]

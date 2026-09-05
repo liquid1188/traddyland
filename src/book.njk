@@ -49,7 +49,7 @@ description: "Traddyland: Memoir of a Radical Traditional Catholic. Synopsis, pr
   <div class="wrap">
     <div class="band-head"><h2>Praise</h2><a class="textlink" href="/press/">Full press coverage →</a></div>
     <div class="praise">
-    {%- for q in praise %}<blockquote>{{ q.quote }}<cite>{{ q.who }}</cite></blockquote>{% endfor %}
+    {%- for q in praise %}<blockquote{% if q.featured %} class="wide"{% endif %}>{{ q.quote }}<cite>{{ q.who }}</cite></blockquote>{% endfor %}
     </div>
   </div>
 </section>

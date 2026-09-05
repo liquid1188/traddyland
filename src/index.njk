@@ -38,6 +38,14 @@ description: "Traddyland is Lou Massett's memoir of growing up inside the Societ
   </div>
 </section>
 
+<section class="band paper-2">
+  <div class="wrap">
+    {%- for q in praise %}{% if q.featured %}
+    <blockquote class="featured-quote">{{ q.quote }}<cite>{{ q.who }}</cite></blockquote>
+    {% endif %}{% endfor %}
+  </div>
+</section>
+
 <section class="band dusk on-dark">
   <div class="wrap">
     <h2>How it happens.</h2>
@@ -54,9 +62,9 @@ description: "Traddyland is Lou Massett's memoir of growing up inside the Societ
   <div class="wrap">
     <div class="band-head"><h2>What readers are saying</h2><a class="textlink" href="/press/">Press and reviews →</a></div>
     <div class="praise">
-    {%- for q in praise %}
+    {%- for q in praise %}{% if not q.featured %}
       <blockquote>{{ q.quote }}<cite>{{ q.who }}</cite></blockquote>
-    {%- endfor %}
+    {% endif %}{%- endfor %}
     </div>
   </div>
 </section>

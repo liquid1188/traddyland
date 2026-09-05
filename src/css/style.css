@@ -173,7 +173,8 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .form button { font: inherit; justify-self: start; cursor: pointer; }
 
 /* inner pages */
-.page-head { padding: clamp(2.5rem, 5vw, 4rem) 0 1rem; }
+.page-head { padding: clamp(2rem, 4vw, 3rem) 0 0; }
+.page-head + .band { padding-top: 1.75rem !important; }
 .page-head h1 { margin-bottom: .4rem; }
 .page-head .lede { margin: 0; }
 .portrait { width: 100%; }
@@ -205,3 +206,17 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .reading-side p:not(.lede) { font-size: 1rem; color: var(--ink-2); }
 @media (max-width: 900px) { .reading { grid-template-columns: 1fr; gap: 1.5rem; } .reading-side { position: static; } }
 .two-col.top .prose { max-width: 66ch; }
+
+.press-strip a.forth { position: relative; }
+.press-strip a.forth span { position: absolute; top: -1.05rem; left: 0; font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: var(--red); font-weight: 600; }
+.press-strip .wrap { padding-top: 1.9rem; }
+.featured-quote { margin: 0 auto; max-width: 52rem; font-family: var(--display); font-size: clamp(1.35rem, 2.4vw, 1.9rem); line-height: 1.35; text-align: center; }
+.featured-quote::before { content: "“"; display: block; font-size: 3.5rem; line-height: .5; color: var(--red); margin-bottom: 1rem; }
+.featured-quote cite { display: block; font-family: var(--body); font-style: normal; font-size: 1rem; color: var(--ink-2); margin-top: 1.2rem; }
+.praise blockquote.wide { grid-column: 1 / -1; font-size: 1.4rem; }
+.needs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; border-top: 1px solid var(--rule); padding-top: 2rem; }
+.needs h2 { font-size: 1.7rem; margin-bottom: .5rem; }
+.needs p { font-size: 1.02rem; margin: 0; }
+@media (max-width: 860px) { .needs { grid-template-columns: 1fr; } }
+.nav .btn.ghost { color: #fff; border-color: rgba(255,255,255,.5); }
+.foot-brand a { text-decoration: none; color: #fff; display: inline; padding: 0; }

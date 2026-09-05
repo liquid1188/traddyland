@@ -1,6 +1,23 @@
 [
- {"quote":"A memoir the Church needs now.","who":"Where Peter Is"},
- {"quote":"Traddyland is a powerful, beautifully written memoir that delivers far more than a personal story. It's an unflinching and sometimes tragic exploration of faith, identity, trust, betrayal.","who":"Mike Lally"},
- {"quote":"Readers will also feel his painful struggle reconciling his belief in Christ and the goodness of Catholicism juxtaposed with the radicalism of Traddyist Catholic members of the Society of Saint Pius X that broke away from the Catholic Church in 1988.","who":"Bonnie Gruttadaria"},
- {"quote":"Massett does a wonderful job in this book, painting a vivid picture of his life growing up in a splinter group of staunch traditional Catholics.","who":"Amazon reader review"}
+ {
+  "quote": "A memoir the Church needs now.",
+  "who": "Where Peter Is"
+ },
+ {
+  "quote": "Louis Massett offers a lively insight into the ethos of Catholic traditionalism. His memoir is warm and funny in parts, poignant and soulful in others. I wanted to leap into the pages and hug the hurting souls. Massett recalls many of the events I was aware of as a seminarian in Winona, Minnesota, and I can identify with elements of his journey. I heartily recommend his book.",
+  "who": "Gary Campbell, former SSPX priest",
+  "featured": true
+ },
+ {
+  "quote": "Traddyland is a powerful, beautifully written memoir that delivers far more than a personal story. It's an unflinching and sometimes tragic exploration of faith, identity, trust, betrayal.",
+  "who": "Mike Lally"
+ },
+ {
+  "quote": "Readers will also feel his painful struggle reconciling his belief in Christ and the goodness of Catholicism juxtaposed with the radicalism of Traddyist Catholic members of the Society of Saint Pius X that broke away from the Catholic Church in 1988.",
+  "who": "Bonnie Gruttadaria"
+ },
+ {
+  "quote": "Massett does a wonderful job in this book, painting a vivid picture of his life growing up in a splinter group of staunch traditional Catholics.",
+  "who": "Amazon reader review"
+ }
 ]
