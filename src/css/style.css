@@ -198,7 +198,7 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 @media (max-width: 520px) { .foot-grid { grid-template-columns: 1fr; } }
 
 .bio-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 4rem; align-items: start; }
-.bio-side { position: sticky; top: 2rem; }
+.bio-side { }
 .bio-side .facts dl { grid-template-columns: auto 1fr; font-size: .98rem; }
 @media (max-width: 900px) { .bio-grid { grid-template-columns: 1fr; gap: 2rem; } .bio-side { position: static; max-width: 420px; } }
 .reading { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 4rem; align-items: start; }
