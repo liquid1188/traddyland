@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 ---
-<div class="wrap page-head"><p class="kicker">From the forum · {{ page | iso | longDate }}{% if author %} · By {{ author }}{% endif %}</p><h1>{{ title }}</h1>{% if lede %}<p class="lede">{{ lede }}</p>{% endif %}</div>
+<div class="wrap page-head"><p class="kicker">{{ page | iso | longDate }}{% if author %} · By {{ author }}{% endif %}</p><h1>{{ title }}</h1>{% if lede %}<p class="lede">{{ lede }}</p>{% endif %}</div>
 <section class="band" style="padding-top:1rem">
   <div class="wrap two-col top">
     <div class="prose">{{ content | safe }}
