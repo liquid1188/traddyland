@@ -270,3 +270,12 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
   .press-strip .label { flex-basis: 100%; margin-bottom: .2rem; }
   .press-strip .wrap { gap: 2rem 2.5rem; }
 }
+@media (max-width: 700px) {
+  .press-strip .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.2rem 1.5rem; justify-items: center; align-items: center; }
+  .press-strip .label { grid-column: 1 / -1; justify-self: start; }
+  .press-strip a { justify-content: center; width: 100%; }
+  .press-strip img { height: 32px; max-width: 100%; object-fit: contain; }
+  .press-strip img.tall { height: 42px; }
+  .press-strip img.short { height: 26px; }
+  .press-strip a.forth span { left: 50%; transform: translateX(-50%); white-space: nowrap; }
+}
