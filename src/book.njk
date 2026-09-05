@@ -48,7 +48,7 @@ description: "Traddyland: Memoir of a Radical Traditional Catholic. Synopsis, pr
   <div class="wrap">
     <div class="band-head"><h2>Where to buy</h2></div>
     <div class="buy">
-    {%- for b in buy %}<a href="{{ b.url }}"><strong>{{ b.name }}</strong><span>{{ b.note }}</span></a>{% endfor %}
+    {%- for b in buy %}<a href="{{ b.url }}" class="buy-{{ b.name | slugify }}">{% if b.logo %}<img class="buy-logo" src="{{ b.logo }}" alt="{{ b.name }}">{% if b.name == "Apple Books" %}<strong class="buy-wm">Apple Books</strong>{% endif %}{% else %}<strong class="buy-wm">{{ b.name }}</strong>{% endif %}<span>{{ b.note }}</span></a>{% endfor %}
     </div>
     <p style="margin-top:1.5rem;color:var(--ink-2)">If the book moves you, the single most helpful thing you can do is leave an honest review on Amazon when you finish. That is how memoirs find their readers.</p>
   </div>

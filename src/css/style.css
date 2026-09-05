@@ -282,3 +282,11 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .site-foot.v2 .util a.totop { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 0; }
 .site-foot.v2 .util a.totop svg { width: 16px; height: 16px; display: block; }
 .kicker { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold, #c9a35c); font-weight: 600; margin: 0 0 .6rem; }
+.buy a { display: flex; flex-direction: column; align-items: flex-start; gap: .5rem; }
+.buy-logo { height: 26px; width: auto; max-width: 100%; display: block; }
+.buy-apple-books { flex-direction: row !important; flex-wrap: wrap; align-items: center !important; }
+.buy-apple-books .buy-logo { height: 22px; margin-right: .5rem; }
+.buy-apple-books span { flex-basis: 100%; }
+.buy-wm { font-family: var(--display); font-size: 1.3rem; font-weight: 500; letter-spacing: .01em; }
+.buy-barnes-and-noble .buy-wm { font-family: "Times New Roman", Georgia, serif; text-transform: uppercase; letter-spacing: .06em; font-size: 1.05rem; font-weight: 700; }
+.buy-bookshop-org .buy-wm { font-family: var(--body); font-weight: 700; letter-spacing: -.01em; font-size: 1.25rem; }
