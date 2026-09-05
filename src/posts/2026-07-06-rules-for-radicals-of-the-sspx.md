@@ -2,6 +2,10 @@
 title: "Rules for Radicals…of the SSPX"
 date: 2026-07-06
 lede: "Rad Trad apologists tap Saul Alinsky to rationalize their schism."
+comments:
+  - author: "Former member (account deleted)"
+    date: 2026-08-08
+    body: "Lou loves to paint the SSPX as Bishop Williamson. He has not been associated with the SSPX for over 12 years!"
 ---
 ![](/images/forum/eb75f7_e49265eea9eb481a9cc9a0a8a7781b8c.jpg)
 

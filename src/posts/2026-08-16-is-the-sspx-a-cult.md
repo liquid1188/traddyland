@@ -1,6 +1,14 @@
 ---
 title: "Is the SSPX a Cult?"
 date: 2026-08-16
+comments:
+  - author: "Dan Kavic"
+    date: 2026-08-19
+    body: "Thanks for posting this Louis, the SSPX is a cult, and I'm glad that Traddyland is out there to expose it."
+  - author: "Louis Massett"
+    date: 2026-08-19
+    replyTo: "Dan Kavic"
+    body: "Thanks, Dan!"
 ---
 ![](/images/forum/eb75f7_44b2b2f4f3c04f07b7d68d5967f5d47d.png)
 

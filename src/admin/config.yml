@@ -21,7 +21,21 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: lede, label: One-line summary, widget: string, required: false, hint: Shows under the title and in the list of posts. }
+      - { name: author, label: Author, widget: string, required: false, hint: Leave blank for your own posts. Fill in for a guest post by a member. }
       - { name: body, label: Post, widget: markdown }
+      - name: comments
+        label: Comments
+        label_singular: Comment
+        widget: list
+        required: false
+        collapsed: true
+        summary: "{{fields.author}} · {{fields.date}}"
+        hint: Comments carried over from the old forum. Delete any you don't want shown.
+        fields:
+          - { name: author, label: Name }
+          - { name: date, label: Date, widget: datetime, time_format: false, format: "YYYY-MM-DD" }
+          - { name: replyTo, label: Replying to, required: false }
+          - { name: body, label: Comment, widget: markdown, minimal: true }
 
   - name: news
     label: Background reading

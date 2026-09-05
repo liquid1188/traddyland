@@ -1,6 +1,10 @@
 ---
 title: "Sympathy for the Devil? A word on the SSPX Schism"
 date: 2026-07-09
+comments:
+  - author: "Mel Mck"
+    date: 2026-07-17
+    body: "Interesting piece. Ironically enough, it was during the COVID lockdowns that I really began to see the problems with what the SSPX was doing. I didn't mind that they kept the doors open when other institutions shuttered them, but blatant denial of the reality of what was going on in the hospitals and in other countries, and the shaming and ostracizing of those who were concerned and chose to wear masks and isolate themselves was striking. When it came down to getting vaccinated or not, the anti-vaccine rhetoric was rampant in many circles, but particularly in the SSPX ones. At the same time they were willing to try every other crackpot remedy that was suggested on the internet rather than get vaccinated. The distrust of any institution outside of the SSPX is astonishing. I ended up leaving for personal reasons, but the shattering of the illusion was something that was necessary to allow the deconstruction process to begin."
 ---
 ![](/images/forum/eb75f7_f3a3d3844dd044c4be9c439c27960b95.jpg)
 

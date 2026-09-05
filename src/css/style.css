@@ -290,3 +290,16 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .buy-wm { font-family: var(--display); font-size: 1.3rem; font-weight: 500; letter-spacing: .01em; }
 .buy-barnes-and-noble .buy-wm { font-family: "Times New Roman", Georgia, serif; text-transform: uppercase; letter-spacing: .06em; font-size: 1.05rem; font-weight: 700; }
 .buy-bookshop-org .buy-wm { font-family: var(--body); font-weight: 700; letter-spacing: -.01em; font-size: 1.25rem; }
+
+.news .byline { margin: -.2rem 0 .3rem; font-size: .9rem; color: var(--ink-2); font-style: italic; }
+.comments { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+.comments h2 { font-size: 1.4rem; margin: 0 0 1.2rem; }
+.comment { padding: 1rem 0; border-top: 1px solid var(--rule); }
+.comment.reply { margin-left: 2.2rem; padding-left: 1.2rem; border-left: 2px solid var(--rule); border-top: 0; }
+.comment .c-meta { margin: 0 0 .4rem; font-size: .92rem; color: var(--ink-2); }
+.comment .c-meta strong { color: var(--ink); }
+.comment .c-meta time { margin-left: .5rem; }
+.comment p { margin: 0 0 .7rem; font-size: 1rem; }
+@media (max-width: 600px) { .comment.reply { margin-left: 1rem; } }
+.prose .vframe { position: relative; aspect-ratio: 16 / 9; margin: 0 0 1.5rem; background: #000; }
+.prose .vframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }

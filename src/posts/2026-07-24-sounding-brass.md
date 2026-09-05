@@ -1,8 +1,28 @@
 ---
 title: "Sounding Brass"
 date: 2026-07-24
+comments:
+  - author: "Mel Mck"
+    date: 2026-07-24
+    body: "The same words from St. Paul often come to mind when I reflect on my own experiences in the SSPX, yet they ultimately serve as a reminder to all of us, not just to one particular group. Those of us who have lived in the SSPX and been hurt by it may recognize the psychological blind spots and defensive mechanisms at work more readily than those looking in from the outside. At the same time, we who have left are not immune from bitterness or bias ourselves. Taylor Marshall is not exactly an innocent victim—he spent years publicly defending the SSPX—but it still takes humility and courage to admit you may have been wrong, and I applaud him for that.\n\n \"The revolution devours its own children.\" ~Jacques Mallet du Pan"
+  - author: "Dan Kavic"
+    date: 2026-07-27
+    replyTo: "Mel Mck"
+    body: "I don't follow him much anymore. I'm not missing much!"
+  - author: "Mel Mck"
+    date: 2026-07-27
+    replyTo: "Dan Kavic"
+    body: "Fair enough, I don't usually follow his content, so I wouldn't know."
+  - author: "Dan Kavic"
+    date: 2026-07-27
+    replyTo: "Mel Mck"
+    body: "I can agree with you that it takes courage to admit if you're wrong. Taylor is a flip flopper..you can't trust the man...because he constantly worries about promoting Infiltration and his other books. I think that he is doing this to try to attract a different audience to his channel."
+  - author: "Louis Massett"
+    date: 2026-07-24
+    replyTo: "Mel Mck"
+    body: "Truth!"
 ---
-https://youtu.be/EZI7-xrqayo?si=DXgQcBiFKTeTQJXv
+<div class="vframe"><iframe src="https://www.youtube-nocookie.com/embed/EZI7-xrqayo" title="Video" loading="lazy" allowfullscreen allow="accelerometer; encrypted-media; picture-in-picture"></iframe></div>
 
 *On Taylor Marshall, the SSPX, and 1 Corinthians 13*
 

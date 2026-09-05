@@ -1,10 +1,21 @@
 ---
 layout: base.njk
 ---
-<div class="wrap page-head"><p class="kicker">From the forum · {{ page | iso | longDate }}</p><h1>{{ title }}</h1>{% if lede %}<p class="lede">{{ lede }}</p>{% endif %}</div>
+<div class="wrap page-head"><p class="kicker">From the forum · {{ page | iso | longDate }}{% if author %} · By {{ author }}{% endif %}</p><h1>{{ title }}</h1>{% if lede %}<p class="lede">{{ lede }}</p>{% endif %}</div>
 <section class="band" style="padding-top:1rem">
   <div class="wrap two-col top">
     <div class="prose">{{ content | safe }}
+      {%- if comments and comments.length %}
+      <div class="comments" id="comments">
+        <h2>{{ comments.length }} {% if comments.length == 1 %}comment{% else %}comments{% endif %}</h2>
+        {%- for c in comments %}
+        <div class="comment{% if c.replyTo %} reply{% endif %}">
+          <p class="c-meta"><strong>{{ c.author }}</strong>{% if c.replyTo %} <span>replying to {{ c.replyTo }}</span>{% endif %} <time>{{ c.date | longDate }}</time></p>
+          {{ c.body | md | safe }}
+        </div>
+        {%- endfor %}
+      </div>
+      {%- endif %}
       <p style="margin-top:2.5rem"><a class="textlink" href="/forum/">← All posts</a></p>
     </div>
     <aside>
