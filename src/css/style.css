@@ -49,7 +49,8 @@ em { font-style: italic; }
 .site-head { position: absolute; inset: 0 0 auto 0; z-index: 20; }
 body:not(.home) .site-head { position: static; background: var(--dusk); }
 .bar { display: flex; align-items: center; justify-content: space-between; height: 80px; }
-.brand { font-family: var(--display); font-weight: 500; font-size: 1.6rem; color: #fff; text-decoration: none; letter-spacing: .01em; }
+.brand { font-family: var(--display); font-weight: 500; font-size: 1.6rem; color: #fff; text-decoration: none; letter-spacing: .01em; display: flex; align-items: center; gap: .7rem; }
+.brand-mark { height: 40px; width: auto; box-shadow: 0 2px 8px rgba(0,0,0,.35); }
 .nav { display: flex; align-items: center; gap: 1.5rem; }
 .nav a { color: #fff; text-decoration: none; font-weight: 500; font-size: 1rem; padding-bottom: 2px; border-bottom: 2px solid transparent; }
 .nav a[aria-current] { border-bottom-color: var(--gold); }
