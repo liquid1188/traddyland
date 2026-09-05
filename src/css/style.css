@@ -173,7 +173,7 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .form button { font: inherit; justify-self: start; cursor: pointer; }
 
 /* inner pages */
-.page-head { padding: clamp(2rem, 4vw, 3rem) 0 0; }
+.page-head { padding-top: clamp(2rem, 4vw, 3rem); padding-bottom: 0; }
 .page-head + .band { padding-top: 1.75rem !important; }
 .page-head h1 { margin-bottom: .4rem; }
 .page-head .lede { margin: 0; }
