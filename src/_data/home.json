@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "kicker": "A memoir by Lou Massett",
+    "headline": "He was thirteen when they put him on the bus to Kansas.",
+    "lede": "Traddyland is the story of a boy raised inside the Society of St. Pius X, five years at its boarding school in St. Marys, and the thirty years since, as the movement he left kept growing in America.",
+    "primary": "Buy the book",
+    "secondary": "Read Act I free"
+  },
+  "why": {
+    "heading": "Why this story matters now.",
+    "body": "For half a century a breakaway faction of the Catholic Church has operated in the seams of Western institutions, outside the authority of Rome and off the radar of the press. The Society of St. Pius X has produced a Holocaust-denying bishop expelled by his own order, a flagship boarding school whose alumni include a Republic of Texas militiaman, and a chapel that hosted Timothy McVeigh four days before the Oklahoma City bombing. On July 1, 2026, it consecrated four bishops without a papal mandate. On July 2, Pope Leo XIV declared the Society in schism.\n\nLou Massett was raised inside all of it. He went to school with one of the four new bishops. <em>Traddyland</em> is the first book to tell that story from the inside.\n\nIf you have ever watched someone you love disappear into an ideology, or felt that pull yourself, this story will feel familiar.",
+    "caption": "St. Marys, Kansas. The campus where Lou spent five teenage years, and where four decades of American traditionalism have taken shape."
+  },
+  "acts": {
+    "heading": "How a person gets pulled in, and how they get out.",
+    "items": [
+      {
+        "num": "One",
+        "title": "Certainty becomes identity",
+        "text": "How belief stops being something you hold and starts being who you are."
+      },
+      {
+        "num": "Two",
+        "title": "Identity becomes division",
+        "text": "The quiet sorting of the world into us and them, by family, faith, and tribe."
+      },
+      {
+        "num": "Three",
+        "title": "Division reshapes community",
+        "text": "What it costs, and what survives, when we choose closeness over correctness."
+      },
+      {
+        "num": "Four",
+        "title": "Finding a way back",
+        "text": "Not a renunciation but a reckoning. How to leave the Society without leaving the Church, and keep loving the family who stayed."
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+---
+layout: base.njk
+---
+<div class="wrap page-head"><p class="kicker">From the forum · {{ page | iso | longDate }}</p><h1>{{ title }}</h1>{% if lede %}<p class="lede">{{ lede }}</p>{% endif %}</div>
+<section class="band" style="padding-top:1rem">
+  <div class="wrap two-col top">
+    <div class="prose">{{ content | safe }}
+      <p style="margin-top:2.5rem"><a class="textlink" href="/forum/">← All posts</a></p>
+    </div>
+    <aside>
+      <div class="facts">
+        <h3 style="margin-top:0">Join the conversation</h3>
+        <p style="margin:0 0 1rem">Lou reads and replies to every message. Comments and questions on this post are welcome.</p>
+        <a class="btn" href="mailto:{{ site.email }}?subject={{ title | urlencode }}">Write to Lou</a>
+      </div>
+    </aside>
+  </div>
+</section>

@@ -4,10 +4,29 @@ backend:
   branch: main
 media_folder: src/images
 public_folder: /images
+site_url: https://www.traddyland.com
+display_url: https://www.traddyland.com
+logo_url: https://www.traddyland.com/images/cover.jpg
+
 collections:
+
+  - name: posts
+    label: Forum posts
+    label_singular: Post
+    description: Your own writing. Each post gets its own page under /forum/ and the newest shows first. Write in plain paragraphs; use the toolbar for bold, italics, links, and headings.
+    folder: src/posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { name: title, label: Title }
+      - { name: lede, label: One-line summary, widget: string, required: false, hint: Shows under the title and in the list of posts. }
+      - { name: body, label: Post, widget: markdown }
+
   - name: news
     label: Background reading
     label_singular: Article
+    description: Outside articles about the SSPX and St. Marys, listed newest first. Not your writing; use Forum posts for that.
     folder: src/news
     create: true
     slug: "{{fields.date}}-{{slug}}"
@@ -19,3 +38,156 @@ collections:
       - { name: url, label: Link }
       - { name: body, label: One-line summary, widget: text }
       - { name: tags, widget: hidden, default: news }
+
+  - name: pages
+    label: Page text
+    description: The words on each page. Change them here and the page updates within a few minutes.
+    files:
+
+      - name: home
+        label: Homepage
+        file: src/_data/home.json
+        fields:
+          - name: hero
+            label: Top of page
+            widget: object
+            fields:
+              - { name: kicker, label: Small line above the headline }
+              - { name: headline, label: Headline }
+              - { name: lede, label: Paragraph under the headline, widget: text }
+              - { name: primary, label: Main button text, default: Buy the book }
+              - { name: secondary, label: Second button text, default: Read Act I free }
+          - name: why
+            label: Why this story matters
+            widget: object
+            fields:
+              - { name: heading, label: Heading }
+              - { name: body, label: Text, widget: markdown, hint: Two or three short paragraphs. The first gets a large opening letter. }
+              - { name: caption, label: Photo caption, widget: text }
+          - name: acts
+            label: The four acts
+            widget: object
+            fields:
+              - { name: heading, label: Heading }
+              - name: items
+                label: Acts
+                widget: list
+                summary: "{{fields.num}} · {{fields.title}}"
+                fields:
+                  - { name: num, label: Number (One, Two...) }
+                  - { name: title, label: Title }
+                  - { name: text, label: One or two sentences, widget: text }
+
+      - name: book
+        label: The book page
+        file: src/_data/book.json
+        fields:
+          - { name: body, label: About the book, widget: markdown, hint: The first paragraph gets a large opening letter. }
+          - { name: quote, label: Pull quote from the book, widget: text }
+          - { name: quoteCite, label: Quote source, default: "Traddyland, page 495" }
+          - name: facts
+            label: Facts box
+            widget: list
+            summary: "{{fields.label}}: {{fields.value}}"
+            fields:
+              - { name: label, label: Label }
+              - { name: value, label: Value }
+
+      - name: about
+        label: Lou Massett page
+        file: src/_data/about.json
+        fields:
+          - { name: lede, label: Line under your name, widget: text }
+          - { name: body, label: Your story, widget: markdown, hint: Use Heading 2 for section titles like "Who this book is for". }
+          - { name: caption, label: Photo caption }
+
+      - name: speaking
+        label: Interviews and speaking
+        file: src/_data/speaking.json
+        fields:
+          - { name: lede, label: Line under the heading, widget: text }
+          - { name: topics, label: What you speak on, widget: text }
+          - { name: shortBio, label: Short bio (for programs and show notes), widget: text }
+          - { name: longBio, label: Long bio, widget: text }
+
+  - name: lists
+    label: Praise, press, and where to buy
+    files:
+
+      - name: praise
+        label: Praise
+        file: src/_data/praise.json
+        description: Reader and reviewer quotes. Tick Featured on the one that should appear large on the homepage.
+        fields:
+          - name: items
+            label: Quotes
+            widget: list
+            root: true
+            summary: "{{fields.who}}"
+            fields:
+              - { name: quote, label: Quote, widget: text }
+              - { name: who, label: Who said it }
+              - { name: featured, label: Featured on the homepage, widget: boolean, required: false, default: false }
+
+      - name: press
+        label: Press coverage
+        file: src/_data/press.json
+        description: Articles about you or the book. Each needs a logo file for the "As featured in" strip; upload one or leave blank to show the outlet name.
+        fields:
+          - name: items
+            label: Articles
+            widget: list
+            root: true
+            summary: "{{fields.outlet}} · {{fields.title}}"
+            fields:
+              - { name: outlet, label: Outlet }
+              - { name: title, label: Article title }
+              - { name: url, label: Link }
+              - { name: date, label: Date (as you want it shown) }
+              - { name: note, label: One or two sentences, widget: text }
+              - { name: logo, label: Logo (SVG or PNG), widget: image, required: false }
+              - { name: logoDark, label: Logo for dark backgrounds, widget: image, required: false }
+              - { name: forthcoming, label: Forthcoming (not published yet), widget: boolean, required: false, default: false }
+
+      - name: buy
+        label: Where to buy
+        file: src/_data/buy.json
+        fields:
+          - name: items
+            label: Retailers
+            widget: list
+            root: true
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Retailer }
+              - { name: url, label: Link }
+              - { name: note, label: Note (e.g. Paperback and Kindle), required: false }
+              - { name: logo, label: Logo, widget: image, required: false }
+
+  - name: settings
+    label: Settings
+    files:
+      - name: site
+        label: Site settings
+        file: src/_data/site.json
+        fields:
+          - { name: name, label: Site name }
+          - { name: author, label: Author name as shown }
+          - { name: authorFull, label: Author full name }
+          - { name: tagline, label: Tagline (used for sharing and search), widget: text }
+          - { name: email, label: Contact email }
+          - { name: amazon, label: Amazon link (paperback) }
+          - { name: amazonKindle, label: Amazon link (Kindle) }
+          - name: social
+            label: Social links
+            widget: object
+            fields:
+              - { name: instagram, label: Instagram, required: false }
+              - { name: facebook, label: Facebook, required: false }
+              - { name: x, label: X, required: false }
+              - { name: youtube, label: YouTube, required: false }
+              - { name: tiktok, label: TikTok, required: false }
+              - { name: linkedin, label: LinkedIn, required: false }
+          - { name: ga4, label: Google Analytics ID (G-...), required: false }
+          - { name: url, widget: hidden }
+          - { name: setupMode, widget: hidden }

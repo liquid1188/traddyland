@@ -12,21 +12,14 @@ description: "Traddyland: Memoir of a Radical Traditional Catholic. Synopsis, pr
 <section class="band" style="padding-top:1.5rem">
   <div class="wrap two-col top">
     <div class="prose">
-      <p class="dropcap">By the age of thirteen, Lou Massett had been sent from his devout Catholic family in Bridgeport, New York, to St. Mary's Academy in St. Marys, Kansas, the flagship boarding school of the Society of St. Pius X. It was the late 1980s. Archbishop Lefebvre had just consecrated four bishops against the will of Rome, and Lou's father had wept for six weeks.</p>
-      <p>What followed was five years inside an institution built for certainty: the rules, the silences, the blanket parties, the priests. Around the school, the town of St. Marys was becoming a hub of American traditionalism and, in the years before Oklahoma City, a place federal agents combed for links to the militia movement. Lou came of age at the intersection of the two.</p>
-      <p>He left in his early twenties. He has watched the movement from the outside for thirty years since. When an FBI memo in 2023 named SSPX parishes as a domestic threat vector, and when Rome declared the Society in schism in July 2026, the story he had been writing for six years became the news.</p>
-      <p><em>Traddyland</em> is not an exposé and not a settling of scores. It is a memoir of inheritance, fracture, and the cost of seeing clearly: how a community you love can become a place you cannot stay, and how to leave it without leaving the faith, or the family, behind.</p>
-      <blockquote>Faith without charity became a dangerous, clanging cymbal.<br><span style="font-size:.9rem;font-style:normal;color:var(--ink-2)">Traddyland, page 495</span></blockquote>
+      {{ book.body | md | dropcap | safe }}
+      <blockquote>{{ book.quote }}<br><span style="font-size:.9rem;font-style:normal;color:var(--ink-2)">{{ book.quoteCite }}</span></blockquote>
     </div>
     <div>
       <img src="/images/cover.jpg" alt="Traddyland cover" width="982" height="1476" style="width:100%;max-width:340px;box-shadow:0 24px 50px -20px rgba(0,0,0,.5)">
       <div class="facts" style="margin-top:1.5rem;max-width:340px">
         <dl>
-          <dt>Author</dt><dd>Louis Massett</dd>
-          <dt>Published</dt><dd>June 2026</dd>
-          <dt>Pages</dt><dd>About 500</dd>
-          <dt>ISBN</dt><dd>979-8-9965014-1-0</dd>
-          <dt>Editions</dt><dd>Paperback, Kindle, Spanish</dd>
+          {%- for f in book.facts %}<dt>{{ f.label }}</dt><dd>{{ f.value }}</dd>{% endfor %}
         </dl>
         <a class="btn" href="{{ site.amazon }}" style="display:block;text-align:center;margin-top:1.2rem">Buy on Amazon</a>
       </div>

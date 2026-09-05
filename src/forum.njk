@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: Forum
+permalink: /forum/
+description: "Lou Massett's posts on the SSPX, the schism, leaving high-control religion, and life after Traddyland."
+---
+<div class="wrap page-head"><p class="kicker">Forum</p><h1>Posts from Lou.</h1><p class="lede">Notes, questions, and replies from the conversation around the book, carried over from the old site and continuing here.</p></div>
+<section class="band" style="padding-top:1.5rem">
+  <div class="wrap">
+  {%- if collections.posts.length %}
+    <ul class="news">
+    {%- for p in collections.posts %}
+      <li><a href="{{ p.url }}">
+        <span class="date">{{ p | iso | longDate }}</span>
+        <span><h3>{{ p.data.title }}</h3><p>{{ p.data.lede or (p.templateContent | striptags | truncate(180)) }}</p><span class="src">Read →</span></span>
+      </a></li>
+    {%- endfor %}
+    </ul>
+  {%- else %}
+    <p class="lede">Posts are on their way.</p>
+  {%- endif %}
+  </div>
+</section>

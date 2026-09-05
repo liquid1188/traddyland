@@ -6,26 +6,16 @@ description: "About Lou Massett, author of Traddyland. Raised in the Society of 
 ---
 <div class="wrap page-head">
   <h1>Lou Massett</h1>
-  <p class="lede">Raised inside a movement most Americans have never heard of. Author of the first book-length account of growing up in it.</p>
+  <p class="lede">{{ about.lede }}</p>
 </div>
 <section class="band" style="padding-top:1.5rem">
   <div class="wrap bio-grid">
     <div class="prose">
-      <p class="dropcap">I grew up in a movement most Americans have never heard of, and the ones who have heard of it usually cannot spell it correctly.</p>
-      <p>The Society of St. Pius X, the SSPX, is a breakaway Catholic order founded in 1970 by the French archbishop Marcel Lefebvre in response to the reforms of the Second Vatican Council. In 1988 Lefebvre consecrated four bishops without the mandate of Pope John Paul II. Rome declared all six men excommunicated the next day. The Society has operated as a parallel Catholic jurisdiction ever since, with its own bishops, priests, chapels, and schools.</p>
-      <p>On July 1, 2026, the Society consecrated four more bishops without a papal mandate. On July 2, Pope Leo XIV excommunicated all six bishops involved and extended the penalty to lay members who formally adhere to the movement, roughly thirty thousand American Catholics.</p>
-      <p>I was raised inside all of it, from birth. I spent the first part of my life trying to live faithfully inside a movement that my own conscience, over time, could not defend. I was formed at the Society's flagship school in St. Marys, Kansas. I attended school with Michael Goldade, one of the four bishops consecrated on July 1.</p>
-      <p><em>Traddyland</em> is the story of that formation, that struggle, and that exodus. It is a book about a father who wept for six weeks in the summer of 1988, a mother who tried to hold her family together across a schism Rome had already named, and the boarding school that shaped four decades of American traditionalist Catholicism. It is not a book that leaves the movement its dignity intact. It is also not a book that leaves its author's dignity intact. Every serious memoir owes both, and this one pays both.</p>
-      <p>I spent six years writing it, in the hope that it might help other men and women raised inside high-control religious movements understand what happened to them, and help the families watching from outside understand what they are seeing.</p>
-      <h2>Who this book is for</h2>
-      <p>Anyone who has watched a family member disappear inside a movement, political, religious, ideological, therapeutic, or online, and wants a careful account of how that happens and what it costs to walk out.</p>
-      <p>Anyone who is Catholic and trying to understand what the July 1 consecrations and the July 2 excommunications mean for the Church, for the traditionalist movement, and for the ordinary families inside it.</p>
-      <p>Anyone who reads memoir seriously. You do not need to be Catholic to read this book. You need to be curious about the interior life of a family formed by a movement, and about what it costs one member to see it clearly.</p>
-      <p>Welcome to Traddyland.<br>— Lou</p>
+      {{ about.body | md | dropcap | safe }}
     </div>
     <aside class="bio-side">
       <img class="portrait" src="/images/lou-massett.jpg" alt="Lou Massett" width="724" height="1086">
-      <p class="caption">Lou Massett lives in central New York.</p>
+      <p class="caption">{{ about.caption }}</p>
     </aside>
   </div>
 </section>
