@@ -162,6 +162,7 @@ collections:
               - { name: logo, label: Logo (SVG or PNG), widget: image, required: false }
               - { name: logoDark, label: Logo for dark backgrounds, widget: image, required: false }
               - { name: forthcoming, label: Forthcoming (not published yet), widget: boolean, required: false, default: false }
+              - { name: strip, label: Show logo in the "As featured in" strip, widget: boolean, required: false, default: true, hint: Turn off for a second article from an outlet already in the strip. }
 
       - name: buy
         label: Where to buy

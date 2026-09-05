@@ -5,14 +5,23 @@
   "url": "https://www.newsweek.com/sspx-member-says-pope-leo-excommunication-will-strengthen-rebel-group-12178549",
   "date": "July 11, 2026",
   "title": "SSPX Member Says Pope Leo Excommunication Will Strengthen Rebel Group",
-  "note": "Lou on the human cost of the excommunications for SSPX families. Newsweek quoted him again on July 16 in its report on the Society's list of papal 'errors'."
+  "note": "Lou on the human cost of the excommunications for SSPX families, as a former classmate of one of the newly consecrated bishops."
  },
  {
-  "outlet": "El Espa\u00f1ol",
+  "outlet": "Newsweek",
+  "logo": "/images/logo-newsweek.svg",
+  "url": "https://www.newsweek.com/sspx-lists-papal-errors-warns-catholics-against-naive-obedience-12204802",
+  "date": "July 16, 2026",
+  "title": "SSPX Lists Papal 'Errors' and Warns Catholics Against 'Naive' Obedience",
+  "note": "Newsweek returns to Lou as the Society appeals its excommunications: on friendships fractured by the schism and relatives boycotting family weddings.",
+  "strip": false
+ },
+ {
+  "outlet": "El Español",
   "logo": "/images/logo-elespanol.svg",
   "url": "https://www.elespanol.com/reportajes/20260627/leon-xiv-cisma-tradicionalistas-sociedad-san-pio-dan-misa-latin-quieren-propios-obispos/1003744301778_0.html",
   "date": "June 27, 2026",
-  "title": "Le\u00f3n XIV, ante el cisma de los 'tradicionalistas' de la Sociedad de San P\u00edo X",
+  "title": "León XIV, ante el cisma de los 'tradicionalistas' de la Sociedad de San Pío X",
   "note": "A long report from Spain on the eve of the consecrations, with Lou's story of his family joining the Society in 1982."
  },
  {
@@ -21,7 +30,7 @@
   "url": "https://www.ncronline.org/news/former-sspx-member-says-unity-catholicism-means-more-valid-ordinations",
   "date": "August 2026",
   "title": "Former SSPX member says unity with Catholicism means more than valid ordinations",
-  "note": "A profile of Lou and the book in the weeks after the \u00c9c\u00f4ne consecrations."
+  "note": "A profile of Lou and the book in the weeks after the Écône consecrations."
  },
  {
   "outlet": "UnHerd",
