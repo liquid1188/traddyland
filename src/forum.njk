@@ -7,6 +7,20 @@ description: "Lou Massett's posts on the SSPX, the schism, leaving high-control 
 <div class="wrap page-head"><h1>Forum</h1><p class="lede">Essays and notes from Lou, posts from members, and the conversation around the book, carried over from the old site and continuing here.</p></div>
 <section class="band" style="padding-top:1.5rem">
   <div class="wrap">
+    <div class="notice" id="notice" hidden></div>
+    <details class="writebox" id="write">
+      <summary class="btn">Write a post</summary>
+      <form class="form" action="{{ site.apiBase }}/api/submit" method="POST" style="margin-top:1.2rem">
+        <input type="hidden" name="kind" value="post">
+        <input type="hidden" name="return" value="/forum/">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+        <label>Your name <input type="text" name="name" required maxlength="80"></label>
+        <label>Title <input type="text" name="title" required maxlength="140"></label>
+        <label>Post <textarea name="body" rows="10" required maxlength="8000" placeholder="Plain text is fine. Blank line between paragraphs."></textarea></label>
+        <button class="btn" type="submit">Submit for posting</button>
+        <p class="fine">Posts are read by Lou before they appear on the site.</p>
+      </form>
+    </details>
   {%- if collections.posts.length %}
     <ul class="news">
     {%- for p in collections.posts %}

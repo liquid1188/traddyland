@@ -1,0 +1,1 @@
+{ "buildCommand": "npx @11ty/eleventy", "outputDirectory": "_site", "functions": { "api/submit.js": { "maxDuration": 15 } } }

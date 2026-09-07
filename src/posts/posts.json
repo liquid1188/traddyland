@@ -1,1 +1,0 @@
-{ "layout": "post.njk", "tags": "post", "permalink": "/forum/{{ page.fileSlug | undated }}/" }

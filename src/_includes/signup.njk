@@ -5,10 +5,16 @@
       <p>Leave your email and Lou will send you the first act of <em>Traddyland</em> as a PDF, along with a short letter every few weeks about the book, the podcast, and the parts of this story still unfolding.</p>
     </div>
     <div>
+      {%- if site.buttondown %}
+      <form action="https://buttondown.com/api/emails/embed-subscribe/{{ site.buttondown }}" method="POST" target="_blank">
+        <input type="hidden" name="tag" value="act-one">
+        <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
+      {%- else %}
       <form action="https://formsubmit.co/{{ site.email }}" method="POST">
         <input type="hidden" name="_subject" value="Act I request from traddyland.com">
         <input type="hidden" name="_next" value="{{ site.url }}/thanks/">
         <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
+      {%- endif %}
         <button class="btn" type="submit">Send me Act I</button>
       </form>
       <p class="fine">No spam. Unsubscribe any time.</p>

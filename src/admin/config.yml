@@ -13,15 +13,21 @@ collections:
   - name: posts
     label: Forum posts
     label_singular: Post
-    description: Your own writing. Each post gets its own page under /forum/ and the newest shows first. Write in plain paragraphs; use the toolbar for bold, italics, links, and headings.
+    description: "Your writing and members' posts. A post marked Pending was submitted by a reader and is not on the site yet; open it, read it, and switch Approved on to publish (or delete it). Made a mistake? Every change is saved; text Andrew and it can be undone in a minute."
     folder: src/posts
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    summary: "{{title}}"
+    summary: "{{title}} · {{author}}"
+    sortable_fields: [title, author, approved]
+    view_filters:
+      - { label: "Pending approval", field: approved, pattern: false }
+      - { label: "Published", field: approved, pattern: true }
     fields:
       - { name: title, label: Title }
+      - { name: approved, label: Approved (on the site), widget: boolean, default: true, hint: "Switch off to take a post down without deleting it." }
       - { name: lede, label: One-line summary, widget: string, required: false, hint: Shows under the title and in the list of posts. }
       - { name: author, label: Author, widget: string, required: false, hint: Leave blank for your own posts. Fill in for a guest post by a member. }
+      - { name: submitted, widget: hidden, required: false }
       - { name: body, label: Post, widget: markdown }
       - name: comments
         label: Comments
@@ -30,9 +36,10 @@ collections:
         required: false
         collapsed: true
         summary: "{{fields.author}} · {{fields.date}}"
-        hint: Comments carried over from the old forum. Delete any you don't want shown.
+        hint: "Reader comments land here with Approved switched off. Switch it on to publish, or delete the comment."
         fields:
           - { name: author, label: Name }
+          - { name: approved, label: Approved (shown on the site), widget: boolean, default: true }
           - { name: date, label: Date, widget: datetime, time_format: false, format: "YYYY-MM-DD" }
           - { name: replyTo, label: Replying to, required: false }
           - { name: body, label: Comment, widget: markdown, minimal: true }
@@ -204,5 +211,7 @@ collections:
               - { name: tiktok, label: TikTok, required: false }
               - { name: linkedin, label: LinkedIn, required: false }
           - { name: ga4, label: Google Analytics ID (G-...), required: false }
+          - { name: buttondown, label: Buttondown username, required: false, hint: "Once set, the Read Act I form subscribes people to your Buttondown newsletter." }
+          - { name: apiBase, widget: hidden }
           - { name: url, widget: hidden }
           - { name: setupMode, widget: hidden }

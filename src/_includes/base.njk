@@ -74,5 +74,6 @@
     <span class="util"><a href="/privacy/">Privacy</a><a href="/admin/">Sign in</a><a href="https://lickitysplitweb.com">Site by Lickity Split Web Design</a><a class="totop" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="m6 14 6-6 6 6"/></svg></a></span>
   </div>
 </footer>
+<script id="forum-notice">(function(){var n=document.getElementById("notice");if(!n)return;var q=new URLSearchParams(location.search);var m={post:"Thanks. Your post has been sent to Lou and will appear once he approves it.",comment:"Thanks. Your comment has been sent to Lou and will appear once he approves it.","1":"Thanks, received."};var e={empty:"Please add your name and some text.",nopost:"We could not find that post. Try again from the post page.",config:"Comments are not switched on yet. Please try again later.",server:"Something went wrong sending that. Please try again in a minute."};var s=q.get("sent"),r=q.get("error");if(s&&m[s]){n.textContent=m[s];n.hidden=false;n.className="notice ok";}else if(r&&e[r]){n.textContent=e[r];n.hidden=false;n.className="notice err";}if(s||r){history.replaceState(null,"",location.pathname+location.hash);n.scrollIntoView({block:"center"});}})();</script>
 </body>
 </html>

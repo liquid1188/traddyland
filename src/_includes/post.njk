@@ -5,24 +5,37 @@ layout: base.njk
 <section class="band" style="padding-top:1rem">
   <div class="wrap two-col top">
     <div class="prose">{{ content | safe }}
-      {%- if comments and comments.length %}
       <div class="comments" id="comments">
-        <h2>{{ comments.length }} {% if comments.length == 1 %}comment{% else %}comments{% endif %}</h2>
-        {%- for c in comments %}
+        {%- if approvedComments.length %}
+        <h2>{{ approvedComments.length }} {% if approvedComments.length == 1 %}comment{% else %}comments{% endif %}</h2>
+        {%- for c in approvedComments %}
         <div class="comment{% if c.replyTo %} reply{% endif %}">
           <p class="c-meta"><strong>{{ c.author }}</strong>{% if c.replyTo %} <span>replying to {{ c.replyTo }}</span>{% endif %} <time>{{ c.date | longDate }}</time></p>
           {{ c.body | md | safe }}
         </div>
         {%- endfor %}
+        {%- else %}
+        <h2>Comments</h2>
+        {%- endif %}
+        <div class="notice" id="notice" hidden></div>
+        <form class="form cform" action="{{ site.apiBase }}/api/submit" method="POST">
+          <input type="hidden" name="kind" value="comment">
+          <input type="hidden" name="slug" value="{{ page.fileSlug | undated }}">
+          <input type="hidden" name="return" value="{{ page.url }}">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+          <label>Your name <input type="text" name="name" required maxlength="80"></label>
+          <label>Comment <textarea name="body" rows="5" required maxlength="8000"></textarea></label>
+          <button class="btn" type="submit">Post comment</button>
+          <p class="fine">Comments are read by Lou before they appear, usually within a day.</p>
+        </form>
       </div>
-      {%- endif %}
       <p style="margin-top:2.5rem"><a class="textlink" href="/forum/">← All posts</a></p>
     </div>
     <aside>
       <div class="facts">
         <h3 style="margin-top:0">Join the conversation</h3>
-        <p style="margin:0 0 1rem">Lou reads and replies to every message. Comments and questions on this post are welcome.</p>
-        <a class="btn" href="mailto:{{ site.email }}?subject={{ title | urlencode }}">Write to Lou</a>
+        <p style="margin:0 0 1rem">Leave a comment below, or start your own thread on the Forum page. Lou reads everything before it goes up.</p>
+        <a class="btn" href="/forum/#write">Write a post</a>
       </div>
     </aside>
   </div>

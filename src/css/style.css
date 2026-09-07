@@ -303,3 +303,13 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 @media (max-width: 600px) { .comment.reply { margin-left: 1rem; } }
 .prose .vframe { position: relative; aspect-ratio: 16 / 9; margin: 0 0 1.5rem; background: #000; }
 .prose .vframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.notice { padding: .9rem 1.1rem; margin: 0 0 1.5rem; border: 1px solid var(--rule); background: var(--paper-2); }
+.notice.ok { border-color: #9bb59b; background: #eef5ee; }
+.notice.err { border-color: #c9a1a1; background: #f7ecec; }
+.cform { margin-top: 1.5rem; }
+.writebox { margin: 0 0 2.5rem; }
+.writebox summary { list-style: none; display: inline-block; cursor: pointer; }
+.writebox summary::-webkit-details-marker { display: none; }
+.writebox form { max-width: 720px; }

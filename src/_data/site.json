@@ -16,5 +16,7 @@
     "tiktok": "https://www.tiktok.com/@traddyland",
     "linkedin": "https://www.linkedin.com/in/louis-massett/"
   },
-  "ga4": ""
+  "ga4": "",
+  "buttondown": "",
+  "apiBase": "https://traddyland.vercel.app"
 }
