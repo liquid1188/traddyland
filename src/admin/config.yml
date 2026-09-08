@@ -190,6 +190,19 @@ collections:
   - name: settings
     label: Settings
     files:
+      - name: subscribers
+        label: Subscribers (Act I signups)
+        file: src/_data/subscribers.json
+        fields:
+          - name: subscribers
+            label: Subscribers
+            widget: list
+            allow_add: true
+            summary: "{{fields.email}} ({{fields.date}})"
+            fields:
+              - { name: email, label: Email }
+              - { name: date, label: Date, required: false }
+              - { name: source, label: Source, required: false }
       - name: site
         label: Site settings
         file: src/_data/site.json
