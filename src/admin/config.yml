@@ -103,6 +103,7 @@ collections:
         label: The book page
         file: src/_data/book.json
         fields:
+          - { name: lede, label: Line under the title, widget: text }
           - { name: body, label: About the book, widget: markdown, hint: The first paragraph gets a large opening letter. }
           - { name: quote, label: Pull quote from the book, widget: text }
           - { name: quoteCite, label: Quote source, default: "Traddyland, page 495" }
