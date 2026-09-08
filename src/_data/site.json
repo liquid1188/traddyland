@@ -18,5 +18,6 @@
   },
   "ga4": "",
   "buttondown": "",
-  "apiBase": "https://traddyland.vercel.app"
+  "apiBase": "https://traddyland.vercel.app",
+  "goatcounter": ""
 }

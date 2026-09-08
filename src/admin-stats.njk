@@ -1,0 +1,24 @@
+---
+permalink: /admin/stats/index.html
+eleventyExcludeFromCollections: true
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Visitors · Traddyland</title>
+<style>
+:root{--ink:#1c1b18;--ink2:#5d5a52;--rule:#ddd7cb;--paper:#f7f4ee;--acc:#1b3a5c}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--paper)}
+.wrap{max-width:1000px;margin:0 auto;padding:2rem 1.2rem 4rem}h1{font-size:1.6rem;margin:0 0 .3rem}.lede{color:var(--ink2);margin:0 0 1.6rem}
+.bar{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;margin-bottom:1.4rem}a.btn{font:inherit;padding:.55rem .9rem;border:1px solid var(--acc);background:var(--acc);color:#fff;border-radius:4px;text-decoration:none}a.btn.ghost{background:transparent;color:var(--acc)}
+iframe{width:100%;height:1400px;border:1px solid var(--rule);background:#fff;border-radius:4px}
+.note{padding:.9rem 1rem;border:1px solid var(--rule);background:#fff;margin:0 0 1.4rem;border-radius:4px}
+</style></head><body><div class="wrap">
+<h1>Visitors</h1>
+<p class="lede">How many people are reading traddyland.com, which pages they open, and where they came from.</p>
+<div class="bar"><a class="btn ghost" href="/admin/">Back to the editor</a><a class="btn ghost" href="/admin/history/">Site history</a>{% if site.goatcounter %}<a class="btn" href="https://{{ site.goatcounter }}.goatcounter.com/" target="_blank" rel="noopener">Open full screen</a>{% endif %}{% if site.ga4 %}<a class="btn ghost" href="https://analytics.google.com/" target="_blank" rel="noopener">Detailed reports (Google Analytics)</a>{% endif %}</div>
+{% if site.goatcounter %}
+<iframe src="https://{{ site.goatcounter }}.goatcounter.com/?hideui=1" title="Visitor statistics" loading="lazy"></iframe>
+<p class="note">If the chart above asks you to sign in, open the full screen link instead. Numbers update every few minutes.</p>
+{% else %}
+<p class="note">Visitor tracking isn't switched on yet. Andrew will add the GoatCounter site code in Site settings and this page will fill in.</p>
+{% endif %}
+</div></body></html>

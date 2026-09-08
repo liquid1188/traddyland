@@ -211,7 +211,8 @@ collections:
               - { name: youtube, label: YouTube, required: false }
               - { name: tiktok, label: TikTok, required: false }
               - { name: linkedin, label: LinkedIn, required: false }
-          - { name: ga4, label: Google Analytics ID (G-...), required: false }
+          - { name: ga4, label: Google Analytics ID (G-...), required: false, hint: "From analytics.google.com. Detailed reports live there; a simple summary is at traddyland.com/admin/stats/" }
+          - { name: goatcounter, label: GoatCounter site code, required: false, hint: "The part before .goatcounter.com. Shows visitor numbers at traddyland.com/admin/stats/" }
           - { name: buttondown, label: Buttondown username, required: false, hint: "Once set, the Read Act I form subscribes people to your Buttondown newsletter." }
           - { name: apiBase, widget: hidden }
           - { name: url, widget: hidden }

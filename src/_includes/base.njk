@@ -29,6 +29,9 @@
   document.addEventListener('submit',function(e){var f=e.target;if(f.action&&/formsubmit/.test(f.action))gtag('event',f.closest('.signup')?'newsletter_signup':'contact_submit',{page:location.pathname});});
   </script>
   {%- endif %}
+  {%- if site.goatcounter and not site.setupMode %}
+  <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  {%- endif %}
 </head>
 <body{% if page.url == "/" %} class="home"{% endif %}>
 <a class="skip" href="#main">Skip to content</a>
