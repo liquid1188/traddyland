@@ -12,7 +12,8 @@
       {%- else %}
       <form action="https://formsubmit.co/{{ site.email }}" method="POST">
         <input type="hidden" name="_subject" value="Act I request from traddyland.com">
-        <input type="hidden" name="_next" value="{{ site.url }}/thanks/">
+        <input type="hidden" name="_next" value="{{ site.url }}/act-one/">
+        <input type="hidden" name="_autoresponse" value="Thanks for your interest in Traddyland. Here is Act I as a PDF: {{ site.url }}/files/traddyland-act-one.pdf  Every few weeks I'll send a short letter about the book, the podcast, and the parts of this story still unfolding. Reply anytime. Lou Massett">
         <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
       {%- endif %}
         <button class="btn" type="submit">Send me Act I</button>

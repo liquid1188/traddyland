@@ -3,7 +3,7 @@ import markdownIt from "markdown-it";
 const mdlib = markdownIt({ html: true, typographer: true });
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(HtmlBasePlugin);
-  eleventyConfig.addPassthroughCopy({ "src/css": "css", "src/admin": "admin", "src/images": "images", "src/video": "video", "src/CNAME": "CNAME" });
+  eleventyConfig.addPassthroughCopy({ "src/css": "css", "src/admin": "admin", "src/images": "images", "src/video": "video", "src/CNAME": "CNAME", "src/files": "files" });
   const opts = { timeZone: "UTC" };
   const d = (iso) => (iso instanceof Date ? iso : new Date(String(iso).slice(0, 10) + "T12:00:00Z"));
   eleventyConfig.addFilter("longDate", (iso) => d(iso).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", ...opts }));
