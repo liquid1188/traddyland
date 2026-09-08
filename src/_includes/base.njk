@@ -45,8 +45,8 @@
       <a href="/about/"{% if page.url == '/about/' %} aria-current="page"{% endif %}>Lou Massett</a>
       <a href="/press/"{% if page.url == '/press/' %} aria-current="page"{% endif %}>Press</a>
       <a href="/podcast/"{% if page.url == '/podcast/' %} aria-current="page"{% endif %}>Podcast</a>
-      <a href="/news/"{% if '/news' in page.url %} aria-current="page"{% endif %}>Background</a>
-      <a href="/forum/"{% if '/forum' in page.url %} aria-current="page"{% endif %}>Forum</a>
+      <a href="/news/"{% if page.url and '/news' in page.url %} aria-current="page"{% endif %}>Background</a>
+      <a href="/forum/"{% if page.url and '/forum' in page.url %} aria-current="page"{% endif %}>Forum</a>
       <a href="/contact/"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>Contact</a>
       <a class="btn small ghost" href="/support/">Support</a>
       <a class="btn small" href="{{ site.amazon }}">Buy the book</a>
