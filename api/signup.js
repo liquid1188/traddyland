@@ -7,6 +7,7 @@ const OWNER = "liquid1188", REPO = "traddyland", BRANCH = "main";
 const GH = "https://api.github.com";
 const SITE = site.url;
 const FROM = `Lou Massett <${site.email}>`;
+const FALLBACK_FROM = process.env.RESEND_FALLBACK_FROM || ""; // e.g. "Lou Massett <traddyland@likoudislegacy.com>" while traddyland.com is unverified
 const PDF_URL = `${SITE}/files/traddyland-act-one.pdf`;
 
 const gh = () => ({ Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, Accept: "application/vnd.github+json", "User-Agent": "traddyland-signup" });
@@ -28,8 +29,9 @@ const text = `Thank you for wanting to read Traddyland. Act I is attached, the p
 If it stays with you, the whole book is on Amazon in paperback and for Kindle, and I would be grateful if you kept going:
 ${site.amazon}
 
-There is also a forum on the site where readers can post and talk about the book. You are welcome there, whether you agree with me or not:
-${SITE}/forum/
+${site.telegram ? `Readers also talk with me and each other in a Telegram group. You are welcome there, whether you agree with me or not:
+${site.telegram}` : `There is also a forum on the site where readers can post and talk about the book. You are welcome there, whether you agree with me or not:
+${SITE}/forum/`}
 
 Every few weeks I send a short letter about the book, the podcast, and the parts of this story still unfolding. Write back anytime. I read everything.
 
@@ -38,18 +40,23 @@ Lou Massett`;
 const html = `<div style="font:17px/1.6 Georgia,serif;color:#1c1b18;max-width:560px">
 <p>Thank you for wanting to read <em>Traddyland</em>. Act I is attached, the prologue through chapter nine. It begins on a December night in 1983, when I was thirteen and my family knelt for the Rosary in a drafty house on Oneida Lake.</p>
 <p>If it stays with you, the whole book is <a href="${site.amazon}">on Amazon in paperback and for Kindle</a>, and I would be grateful if you kept going.</p>
-<p>There is also <a href="${SITE}/forum/">a forum on the site</a> where readers can post and talk about the book. You are welcome there, whether you agree with me or not.</p>
+${site.telegram ? `<p>Readers also talk with me and each other in <a href="${site.telegram}">a Telegram group</a>. You are welcome there, whether you agree with me or not.</p>` : `<p>There is also <a href="${SITE}/forum/">a forum on the site</a> where readers can post and talk about the book. You are welcome there, whether you agree with me or not.</p>`}
 <p>Every few weeks I send a short letter about the book, the podcast, and the parts of this story still unfolding. Write back anytime. I read everything.</p>
 <p>Lou Massett</p>
 </div>`;
 
-async function resend(payload) {
+async function resend(payload, retry = true) {
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
-  if (!r.ok) throw new Error(`resend ${r.status}: ${await r.text()}`);
+  if (!r.ok) {
+    const msg = await r.text();
+    // Domain not yet verified: send from the fallback address, replies still go to Lou.
+    if (retry && FALLBACK_FROM && /domain|verif/i.test(msg)) return resend({ ...payload, from: FALLBACK_FROM, reply_to: site.email }, false);
+    throw new Error(`resend ${r.status}: ${msg}`);
+  }
   return r.json();
 }
 

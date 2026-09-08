@@ -313,3 +313,7 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .writebox summary { list-style: none; display: inline-block; cursor: pointer; }
 .writebox summary::-webkit-details-marker { display: none; }
 .writebox form { max-width: 720px; }
+
+/* Telegram card on the Forum page */
+.telegram-card { display:flex; gap:1.5rem; align-items:center; justify-content:space-between; flex-wrap:wrap; padding:1.4rem 1.6rem; margin:0 0 2rem; border:1px solid var(--rule, #ddd7cb); border-radius:6px; background:var(--card, #fff); }
+.telegram-card .btn { white-space:nowrap; }

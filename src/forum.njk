@@ -4,10 +4,19 @@ title: Forum
 permalink: /forum/
 description: "Lou Massett's posts on the SSPX, the schism, leaving high-control religion, and life after Traddyland."
 ---
-<div class="wrap page-head"><h1>Forum</h1><p class="lede">Essays and notes from Lou, posts from members, and the conversation around the book, carried over from the old site and continuing here.</p></div>
+<div class="wrap page-head"><h1>Forum</h1><p class="lede">Essays and notes from Lou, letters from readers, and the conversation around the book.</p></div>
 <section class="band" style="padding-top:1.5rem">
   <div class="wrap">
     <div class="notice" id="notice" hidden></div>
+  {%- if site.telegram %}
+    <div class="telegram-card">
+      <div>
+        <h2 style="margin:0 0 .4rem">The conversation is on Telegram.</h2>
+        <p style="margin:0">Readers talk with Lou and each other in the Traddyland Readers group. It is free, it works on any phone or computer, and you can leave anytime.</p>
+      </div>
+      <a class="btn" href="{{ site.telegram }}" target="_blank" rel="noopener">Join the group</a>
+    </div>
+  {%- endif %}
     <details class="writebox" id="write">
       <summary class="btn">Write a post</summary>
       <form class="form" action="{{ site.apiBase }}/api/submit" method="POST" style="margin-top:1.2rem">
