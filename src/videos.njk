@@ -1,0 +1,28 @@
+---
+layout: base.njk
+title: Videos
+permalink: /videos/
+description: "Watch Lou Massett's video interviews about Traddyland, with Larry Chapp, Christine Niles, Catholic Unscripted, and others."
+---
+<div class="wrap page-head">
+  <h1>Videos</h1>
+  <p class="lede">Lou's conversations about Traddyland, on camera. For interview requests, write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+</div>
+<section class="band" style="padding-top:1.5rem">
+  <div class="wrap video-list">
+  {%- for v in videos %}
+    <article class="video-item">
+      <div class="vframe"><iframe src="{{ v.embed }}" title="{{ v.title }}" loading="lazy" allowfullscreen allow="accelerometer; encrypted-media; picture-in-picture"></iframe></div>
+      <h3><a href="{{ v.url }}">{{ v.title }}</a></h3>
+      <p class="meta">{{ v.show }} · {{ v.date }}</p>
+      {%- if v.note %}<p>{{ v.note }}</p>{% endif %}
+      {%- if v.clips %}
+      <p class="clips-label">Shorter clips from this episode:</p>
+      <ul class="video-clips">
+        {%- for c in v.clips %}<li><a href="{{ c.url }}">{{ c.title }}</a></li>{% endfor %}
+      </ul>
+      {%- endif %}
+    </article>
+  {%- endfor %}
+  </div>
+</section>

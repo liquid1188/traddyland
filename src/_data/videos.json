@@ -1,0 +1,66 @@
+[
+  {
+    "show": "Misshappycatholic (TradRecovery)",
+    "hostUrl": "https://www.youtube.com/@mrshappycatholic",
+    "title": "Lou Massett and \"Traddyland: The Memoir of a Radical Traditional Catholic\"",
+    "url": "https://www.youtube.com/watch?v=Uka1fFy2PXA",
+    "embed": "https://www.youtube-nocookie.com/embed/Uka1fFy2PXA",
+    "date": "August 8, 2026",
+    "note": "A conversation on leaving the SSPX, from a channel focused on recovery from traditionalist upbringings.",
+    "featured": false
+  },
+  {
+    "show": "Catholic Unscripted",
+    "hostUrl": "https://www.youtube.com/@catholicunscripted",
+    "title": "SSPX | A View From The Inside",
+    "url": "https://www.youtube.com/watch?v=EUTLjbaATzs",
+    "embed": "https://www.youtube-nocookie.com/embed/EUTLjbaATzs",
+    "date": "July 30, 2026",
+    "note": "Lou talks with the UK-based Catholic Unscripted about growing up inside the Society.",
+    "featured": false
+  },
+  {
+    "show": "Eternal Life Plan, with Christine",
+    "hostUrl": "https://www.youtube.com/@EternalLifePlanChristine",
+    "title": "The SSPX Story Other Podcasts Skipped | Traddyland Author Louis Massett",
+    "url": "https://www.youtube.com/watch?v=Sb78lIFZtEc",
+    "embed": "https://www.youtube-nocookie.com/embed/Sb78lIFZtEc",
+    "date": "July 25, 2026",
+    "note": "A long-form conversation on the Society, St. Marys, and the book.",
+    "featured": false,
+    "clips": [
+      {
+        "title": "Bad Priest. Waco. Catholic Ed. Louis Massett.",
+        "url": "https://www.youtube.com/watch?v=-ou78rJiYPo"
+      },
+      {
+        "title": "Former SSPXer admits to being a prankster! Clip",
+        "url": "https://www.youtube.com/watch?v=_KKIpVmLlAc"
+      },
+      {
+        "title": "FBI Raids Catholics: Here's What Really Happened",
+        "url": "https://www.youtube.com/watch?v=HeMmpl4oNJw"
+      }
+    ]
+  },
+  {
+    "show": "Gaudium et Spes 22, with Dr. Larry Chapp",
+    "hostUrl": "https://www.youtube.com/@gaudiumetspes22dr.larrycha26",
+    "title": "Louis Massett joins Larry Chapp to discuss his book: \"Traddyland\"",
+    "url": "https://www.youtube.com/watch?v=zYihJYe8bCQ",
+    "embed": "https://www.youtube-nocookie.com/embed/zYihJYe8bCQ",
+    "date": "July 21, 2026",
+    "note": "Lou and the Catholic theologian and writer Larry Chapp discuss the book and the Society.",
+    "featured": true
+  },
+  {
+    "show": "Forward Boldly, with Christine Niles",
+    "hostUrl": "https://www.youtube.com/@ChristineNiles1",
+    "title": "Traddyland — A Memoir",
+    "url": "https://youtu.be/-vdyRmUOvQg",
+    "embed": "https://www.youtube-nocookie.com/embed/-vdyRmUOvQg",
+    "date": "July 17, 2026",
+    "note": "Investigative journalist Christine Niles talks with Lou about the memoir.",
+    "featured": true
+  }
+]

@@ -172,6 +172,35 @@ collections:
               - { name: forthcoming, label: Forthcoming (not published yet), widget: boolean, required: false, default: false }
               - { name: strip, label: Show logo in the "As featured in" strip, widget: boolean, required: false, default: true, hint: Turn off for a second article from an outlet already in the strip. }
 
+      - name: videos
+        label: Video interviews
+        file: src/_data/videos.json
+        description: Video interviews and appearances about the book, shown on the Videos page and (if Featured) on the homepage.
+        fields:
+          - name: items
+            label: Videos
+            widget: list
+            root: true
+            summary: "{{fields.show}} · {{fields.title}}"
+            fields:
+              - { name: show, label: Show }
+              - { name: hostUrl, label: Show/channel link, required: false }
+              - { name: title, label: Video title }
+              - { name: url, label: Link (the normal YouTube watch link) }
+              - { name: embed, label: Embed link, hint: "Same video, but the /embed/ form, e.g. https://www.youtube-nocookie.com/embed/VIDEOID" }
+              - { name: date, label: Date (as you want it shown) }
+              - { name: note, label: One or two sentences, widget: text, required: false }
+              - { name: featured, label: Featured on the homepage, widget: boolean, required: false, default: false }
+              - name: clips
+                label: Shorter clips from this episode
+                widget: list
+                required: false
+                collapsed: true
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Clip title }
+                  - { name: url, label: Link }
+
       - name: buy
         label: Where to buy
         file: src/_data/buy.json

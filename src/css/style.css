@@ -134,6 +134,20 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .caption { font-size: .95rem; color: var(--ink-2); margin: .7rem 0 0; }
 .band.dusk .caption { color: rgba(255,255,255,.7); }
 
+/* videos page */
+.video-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem 2rem; }
+.video-item h3 { margin: .9rem 0 .2rem; font-size: 1.25rem; }
+.video-item h3 a { color: inherit; text-decoration: none; }
+.video-item h3 a:hover { color: var(--red); }
+.video-item .meta { color: var(--ink-2); font-size: .9rem; margin: 0 0 .5rem; }
+.video-item .clips-label { font-size: .85rem; color: var(--ink-2); margin: 1rem 0 .3rem; }
+.video-clips { list-style: none; margin: 0; padding: 0; font-size: .9rem; }
+.video-clips li { margin: .25rem 0; }
+.video-clips a { color: var(--ink-2); }
+.video-clips a:hover { color: var(--red); }
+.home-videos { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 860px) { .video-list { grid-template-columns: 1fr; } }
+
 /* press page */
 .press-list { display: grid; gap: 1.5rem; }
 .press-item { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; align-items: center; padding: 1.8rem; background: var(--white); border: 1px solid var(--rule); text-decoration: none; color: inherit; }
