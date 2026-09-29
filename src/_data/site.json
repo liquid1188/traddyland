@@ -20,5 +20,6 @@
   "buttondown": "",
   "apiBase": "https://traddyland.vercel.app",
   "goatcounter": "traddyland",
-  "telegram": ""
+  "telegram": "",
+  "web3formsKey": ""
 }
