@@ -150,6 +150,7 @@ collections:
               - { name: quote, label: Quote, widget: text }
               - { name: who, label: Who said it }
               - { name: featured, label: Featured on the homepage, widget: boolean, required: false, default: false }
+              - { name: spotlight, label: Homepage spotlight (its own large section; use for one video at a time), widget: boolean, required: false, default: false }
 
       - name: press
         label: Press coverage
