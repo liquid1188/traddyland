@@ -151,6 +151,8 @@ collections:
               - { name: who, label: Who said it }
               - { name: featured, label: Featured on the homepage, widget: boolean, required: false, default: false }
               - { name: spotlight, label: Homepage spotlight (its own large section; use for one video at a time), widget: boolean, required: false, default: false }
+              - { name: segmentLabel, label: "Spotlight link text (e.g. Lou's interview starts at 14:55)", required: false }
+              - { name: segmentUrl, label: "Spotlight link to Lou's segment (YouTube link with &t=SECONDSs)", required: false }
 
       - name: press
         label: Press coverage

@@ -92,7 +92,7 @@ description: "Traddyland is Lou Massett's memoir of growing up inside the Societ
       <p class="kicker">Featured on {{ v.show }}</p>
       <h3>{{ v.title }}</h3>
       {% if v.note %}<p class="caption">{{ v.note }}</p>{% endif %}
-      <a class="textlink" href="{{ v.url }}">Watch on YouTube →</a>
+      {% if v.segmentUrl %}<a class="textlink" href="{{ v.segmentUrl }}">{{ v.segmentLabel or "Jump to Lou's segment" }} →</a>{% else %}<a class="textlink" href="{{ v.url }}">Watch on YouTube →</a>{% endif %}
     </div>
   </div>
 </section>
