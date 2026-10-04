@@ -86,11 +86,14 @@ description: "Traddyland is Lou Massett's memoir of growing up inside the Societ
 
 {%- for v in videos %}{% if v.spotlight %}
 <section class="band white spotlight">
-  <div class="wrap">
-    <p class="kicker">Featured on {{ v.show }}</p>
-    <div class="band-head"><h2>{{ v.title }}</h2><a class="textlink" href="{{ v.url }}">Watch on YouTube →</a></div>
+  <div class="wrap spotlight-grid">
     <div class="vframe"><iframe src="{{ v.embed }}" title="{{ v.title }}" loading="lazy" allowfullscreen allow="accelerometer; encrypted-media; picture-in-picture"></iframe></div>
-    {% if v.note %}<p class="caption">{{ v.note }}</p>{% endif %}
+    <div>
+      <p class="kicker">Featured on {{ v.show }}</p>
+      <h3>{{ v.title }}</h3>
+      {% if v.note %}<p class="caption">{{ v.note }}</p>{% endif %}
+      <a class="textlink" href="{{ v.url }}">Watch on YouTube →</a>
+    </div>
   </div>
 </section>
 {% endif %}{%- endfor %}
