@@ -6,7 +6,9 @@ import site from "../src/_data/site.json" with { type: "json" };
 const OWNER = "liquid1188", REPO = "traddyland", BRANCH = "main";
 const GH = "https://api.github.com";
 const SITE = site.url;
-const FROM = `Lou Massett <${site.email}>`;
+// Mail goes out from the verified traddyland.com domain; replies and signup notices go to Lou's Gmail.
+const SENDER = site.sendFrom || "louis@traddyland.com";
+const FROM = `Lou Massett <${SENDER}>`;
 const FALLBACK_FROM = process.env.RESEND_FALLBACK_FROM || ""; // e.g. "Lou Massett <traddyland@likoudislegacy.com>" while traddyland.com is unverified
 const PDF_URL = `${SITE}/files/traddyland-act-one.pdf`;
 
@@ -87,7 +89,7 @@ export default async function handler(req, res) {
   const results = await Promise.allSettled([
     resend({ from: FROM, to: [email], reply_to: site.email, subject: "Act I of Traddyland", text, html,
       attachments: [{ path: PDF_URL, filename: "Traddyland-Act-I.pdf" }] }),
-    resend({ from: `Traddyland <${site.email}>`, to: [site.email], subject: `New Act I signup: ${email}`,
+    resend({ from: `Traddyland <${SENDER}>`, to: [site.email], subject: `New Act I signup: ${email}`,
       text: `${email} just asked for Act I on traddyland.com and it was sent to them automatically.\n\nThe full list is in the editor under Subscribers.` }),
     process.env.GITHUB_TOKEN ? recordSubscriber(email) : Promise.resolve(),
   ]);

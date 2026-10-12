@@ -244,7 +244,8 @@ collections:
           - { name: author, label: Author name as shown }
           - { name: authorFull, label: Author full name }
           - { name: tagline, label: Tagline (used for sharing and search), widget: text }
-          - { name: email, label: Contact email }
+          - { name: email, label: Contact email, hint: "Shown on the site and where replies and signup notices go." }
+          - { name: sendFrom, label: "Send-from address (traddyland.com)", required: false, hint: "Must stay a traddyland.com address; it is the sender on the Act I email." }
           - { name: amazon, label: Amazon link (paperback) }
           - { name: amazonKindle, label: Amazon link (Kindle) }
           - name: social
