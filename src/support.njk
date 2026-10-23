@@ -27,7 +27,7 @@ description: "Support Traddyland: the second book, the screenplay, the podcast, 
         {%- if site.paypalDonate %}<a class="btn ghost" href="{{ site.paypalDonate }}" target="_blank" rel="noopener">Donate with PayPal</a>{% else %}<span class="btn ghost is-pending" aria-disabled="true">Donate with PayPal</span>{% endif %}
       </div>
       {%- if site.checkAddress %}
-      <div class="give-check"><p class="kicker" style="margin:1.5rem 0 .35rem">Give by check</p><p style="margin:0">Mail a check to<br>{{ site.checkAddress | escape | replace("\n", "<br>") | safe }}</p></div>
+      <div class="give-check"><p class="kicker" style="margin:1.5rem 0 .35rem">Give by check</p><p style="margin:0">Mail a check to<br>{{ site.checkAddress | escape | replace("\n", "<br>") | safe }}</p>{% if site.phone %}<p style="margin:.6rem 0 0">Questions? Call Lou at <a href="tel:+1{{ site.phone | replace("-", "") }}" style="color:inherit">{{ site.phone }}</a>.</p>{% endif %}</div>
       {%- endif %}
       {%- if not site.stripeDonate and not site.paypalDonate %}
       <p class="caption" style="margin-top:1rem">Online giving opens soon. Until then, <a href="mailto:{{ site.email }}?subject=Supporting%20Traddyland" style="color:inherit">write to Lou</a> and he will reply with how to give.</p>
