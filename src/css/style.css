@@ -393,3 +393,14 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 
 /* breathing room between each video and its title */
 .video-item h3, .home-videos .video-item h3 { margin-top: 1.1rem !important; }
+
+/* carousel: five clips in view, the current one in the middle, list wraps */
+.reels-carousel .reels-track { display: block; position: relative; transform: none !important; }
+.reels-carousel .reel { position: absolute; left: 0; top: 0; width: var(--rw, 200px); flex: none; transition: transform .45s ease, opacity .3s; }
+.reels-carousel .reel.is-off { opacity: 0; pointer-events: none; }
+/* near full-screen viewer */
+.reel-modal { position: fixed; inset: 0; z-index: 1000; background: rgba(8,8,8,.94); display: grid; place-items: center; padding: 3.5rem 1rem 1.5rem; }
+.reel-modal-stage { height: min(88vh, calc((100vw - 2rem) * 16 / 9)); aspect-ratio: 9 / 16; }
+.reel-modal-stage iframe { width: 100%; height: 100%; border: 0; border-radius: 12px; background: #000; }
+.reel-modal-close { position: absolute; top: .75rem; right: 1rem; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255,255,255,.6); background: transparent; color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; }
+.reel-modal-close:hover { border-color: var(--gold); color: var(--gold); }

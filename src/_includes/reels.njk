@@ -1,7 +1,7 @@
 {#- Lou's short vertical videos (YouTube Shorts and Facebook reels).
     mode "row": small previews on one line that scrolls sideways.
     mode "carousel": a centred strip of same-size previews; the middle one
-    is the one to watch, arrows at the sides and below move it. Nothing loads from YouTube or Facebook until one is pressed. -#}
+    is the one to watch, two more show on each side and the list wraps; arrows move it. Nothing loads from YouTube or Facebook until one is pressed. -#}
 {%- if reels and reels.length %}
 <div class="reels reels-{{ mode }}"{% if mode == "carousel" %} data-carousel{% endif %}>
   {%- if mode == "row" %}<button type="button" class="reels-scroll reels-back" aria-label="Scroll back">&#8249;</button>{% else %}<button type="button" class="reels-side reels-prev" aria-label="Previous video">&#8249;</button>
@@ -35,60 +35,81 @@
   var box = document.currentScript.previousElementSibling;
   if (!box || !box.classList.contains("reels")) return;
   var items = [].slice.call(box.querySelectorAll(".reel"));
-  var timer = null, i = 0;
-  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  var n = items.length, i = 0;
   function src(b) {
     if (b.dataset.platform === "facebook") {
-      return "https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent("https://www.facebook.com/reel/" + b.dataset.id) + "&show_text=false&autoplay=true&width=360";
+      return "https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent("https://www.facebook.com/reel/" + b.dataset.id) + "&show_text=false&autoplay=true&width=560";
     }
     return "https://www.youtube-nocookie.com/embed/" + b.dataset.id + "?autoplay=1&playsinline=1&rel=0";
   }
-  function play(b) {
-    stop();
-    var f = document.createElement("iframe");
-    f.src = src(b);
-    f.title = b.dataset.title;
-    f.allow = "autoplay; encrypted-media; picture-in-picture; web-share";
-    f.allowFullscreen = true;
-    f.className = "reel-frame";
-    f._preview = b;
-    b.replaceWith(f);
+  // Play in a near full-screen viewer, the way Shorts and reels are meant to be watched.
+  var modal = null, lastFocus = null;
+  function close() {
+    if (!modal) return;
+    modal.remove(); modal = null; document.documentElement.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
   }
-  box.addEventListener("click", function (e) {
-    var b = e.target.closest(".reel-play");
-    if (b) play(b);
-  });
+  function play(b) {
+    lastFocus = b;
+    modal = document.createElement("div");
+    modal.className = "reel-modal";
+    modal.setAttribute("role", "dialog"); modal.setAttribute("aria-modal", "true"); modal.setAttribute("aria-label", b.dataset.title);
+    modal.innerHTML = '<button type="button" class="reel-modal-close" aria-label="Close video">&times;</button><div class="reel-modal-stage"><iframe allow="autoplay; encrypted-media; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe></div>';
+    var f = modal.querySelector("iframe"); f.src = src(b); f.title = b.dataset.title;
+    modal.addEventListener("click", function (e) { if (e.target === modal || e.target.closest(".reel-modal-close")) close(); });
+    document.body.appendChild(modal); document.documentElement.style.overflow = "hidden";
+    modal.querySelector(".reel-modal-close").focus();
+  }
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
   var track = box.querySelector(".reels-track");
   [["reels-back", -1], ["reels-fwd", 1]].forEach(function (p) {
     var btn = box.querySelector("." + p[0]);
     if (btn) btn.addEventListener("click", function () { track.scrollBy({ left: p[1] * track.clientWidth * 0.8, behavior: "smooth" }); });
   });
-  if (!box.hasAttribute("data-carousel")) return;
+  if (!box.hasAttribute("data-carousel")) {
+    box.addEventListener("click", function (e) { var b = e.target.closest(".reel-play"); if (b) play(b); });
+    return;
+  }
+  // Carousel: the current clip sits in the middle with two on each side.
+  // The list wraps, so the newest clip starts in the middle and the oldest sit to its left.
   var view = box.querySelector(".reels-viewport");
   var count = box.querySelector(".reels-count");
+  function side() { return view.clientWidth < 620 ? 1 : 2; }
+  function rel(k) { var d = ((k - i) % n + n) % n; return d > n / 2 ? d - n : d; }
+  var prev = {};
   function place() {
-    var w = items[0].offsetWidth, gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-    var x = view.clientWidth / 2 - (i * (w + gap) + w / 2);
-    track.style.transform = "translateX(" + x + "px)";
+    var s = side(), gap = parseFloat(getComputedStyle(track).columnGap) || 16;
+    var w = (view.clientWidth - 2 * s * gap) / (2 * s + 1);
+    track.style.setProperty("--rw", w + "px");
+    var h = items[0].offsetHeight; track.style.height = h + "px";
+    items.forEach(function (el, k) {
+      var d = rel(k), far = Math.abs(d) > s;
+      var x = view.clientWidth / 2 - w / 2 + d * (w + gap);
+      // Clips that wrap from one end to the other jump instead of sliding across.
+      var jump = prev[k] !== undefined && Math.abs(prev[k] - d) > 1;
+      el.style.transition = jump ? "none" : "";
+      el.style.transform = "translateX(" + x + "px)";
+      el.classList.toggle("is-off", far);
+      el.setAttribute("aria-hidden", far ? "true" : "false");
+      prev[k] = d;
+    });
   }
-  function show(n) {
-    // A video that is playing goes back to its preview when it leaves the middle.
-    var fr = items[i].querySelector(".reel-frame");
-    if (fr && fr._preview) fr.replaceWith(fr._preview);
-    i = (n + items.length) % items.length;
+  function show(m) {
+    i = ((m % n) + n) % n;
     items.forEach(function (el, k) {
       el.classList.toggle("is-current", k === i);
       var b = el.querySelector(".reel-play");
       if (b) b.tabIndex = k === i ? 0 : -1;
     });
-    if (count) count.textContent = (i + 1) + " / " + items.length;
+    if (count) count.textContent = (i + 1) + " / " + n;
     place();
   }
-  // Pressing a side preview brings it to the middle instead of playing it.
   box.addEventListener("click", function (e) {
     var li = e.target.closest(".reel");
-    if (li && !li.classList.contains("is-current")) { e.stopImmediatePropagation(); e.preventDefault(); show(items.indexOf(li)); }
-  }, true);
+    if (!li) return;
+    if (!li.classList.contains("is-current")) { e.preventDefault(); show(items.indexOf(li)); return; }
+    var b = e.target.closest(".reel-play"); if (b) play(b);
+  });
   [].forEach.call(box.querySelectorAll(".reels-prev"), function (b) { b.addEventListener("click", function () { show(i - 1); }); });
   [].forEach.call(box.querySelectorAll(".reels-next"), function (b) { b.addEventListener("click", function () { show(i + 1); }); });
   box.addEventListener("keydown", function (e) {
@@ -97,6 +118,7 @@
   });
   window.addEventListener("resize", place);
   show(0);
+  window.addEventListener("load", place);
 })();
 </script>
 {%- endif %}
