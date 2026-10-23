@@ -9,14 +9,14 @@ description: "Traddyland: Memoir of a Radical Traditional Catholic. Synopsis, pr
   <p class="lede">{{ book.lede }}</p>
 </div>
 <section class="band" style="padding-top:1.5rem">
-  <div class="wrap two-col top">
+  <div class="wrap book-grid">
     <div class="prose">
       {{ book.body | md | dropcap | safe }}
       <blockquote>{{ book.quote }}<br><span style="font-size:.9rem;font-style:normal;color:var(--ink-2)">{{ book.quoteCite }}</span></blockquote>
     </div>
-    <div>
-      <img src="/images/cover.jpg" alt="Traddyland cover" width="982" height="1476" style="width:100%;max-width:340px;box-shadow:0 24px 50px -20px rgba(0,0,0,.5)">
-      <div class="facts" style="margin-top:1.5rem;max-width:340px">
+    <div class="book-side">
+      <img src="/images/cover.jpg" alt="Traddyland cover" width="982" height="1476" style="width:100%;box-shadow:0 24px 50px -20px rgba(0,0,0,.5)">
+      <div class="facts" style="margin-top:1.5rem">
         <dl>
           {%- for f in book.facts %}<dt>{{ f.label }}</dt><dd>{{ f.value }}</dd>{% endfor %}
         </dl>

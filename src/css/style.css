@@ -438,3 +438,8 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .cway small { font-weight: 600; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
 .cway .soon { font-style: normal; font-weight: 600; font-size: .75rem; color: var(--gold); margin-left: .3rem; }
 .cway b{font-weight:600}
+
+.book-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(2.5rem, 6vw, 5.5rem); align-items: start; }
+.book-grid .prose { max-width: 42rem; font-size: 1.12rem; }
+.book-side { position: sticky; top: 1.5rem; }
+@media (max-width: 860px) { .book-grid { grid-template-columns: 1fr; } .book-side { position: static; max-width: 360px; } }
