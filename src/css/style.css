@@ -443,3 +443,9 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .book-grid .prose { max-width: 42rem; font-size: 1.12rem; }
 .book-side { position: sticky; top: 1.5rem; }
 @media (max-width: 860px) { .book-grid { grid-template-columns: 1fr; } .book-side { position: static; max-width: 360px; } }
+
+.buy-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; align-items: center; }
+.buy-row:has(.buy > a:only-child) { grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 2.5rem; }
+.buy-row:has(.buy > a:only-child) .buy { grid-template-columns: 1fr; }
+.buy-note { margin: 0; color: var(--ink-2); max-width: 38rem; }
+@media (max-width: 760px) { .buy-row:has(.buy > a:only-child) { grid-template-columns: 1fr; } }
