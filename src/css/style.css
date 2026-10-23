@@ -449,3 +449,9 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .buy-row:has(.buy > a:only-child) .buy { grid-template-columns: 1fr; }
 .buy-note { margin: 0; color: var(--ink-2); max-width: 38rem; }
 @media (max-width: 760px) { .buy-row:has(.buy > a:only-child) { grid-template-columns: 1fr; } }
+
+.why-grid { align-items: stretch; }
+.why-fig { margin: 0; display: flex; flex-direction: column; min-height: 100%; }
+.why-fig img { flex: 1 1 auto; min-height: 320px; width: 100%; height: 100%; object-fit: cover; object-position: 55% 70%; border-radius: 4px; box-shadow: 0 24px 50px -28px rgba(0,0,0,.45); }
+.why-fig figcaption { margin-top: .7rem; }
+@media (max-width: 860px) { .why-fig img { min-height: 0; height: auto; aspect-ratio: 16 / 10; } }

@@ -23,13 +23,13 @@ description: "Traddyland is Lou Massett's memoir of growing up inside the Societ
 {% include "press-strip.njk" %}
 
 <section class="band">
-  <div class="wrap two-col top">
+  <div class="wrap two-col why-grid">
     <div class="prose">
       <h2>{{ home.why.heading }}</h2>
       {{ home.why.body | md | dropcap | safe }}
       <a class="textlink" href="/book/">About the book →</a>
     </div>
-    <figure style="margin:0">
+    <figure class="why-fig">
       <img src="/images/st-marys-campus.jpg" alt="The former Jesuit campus at St. Marys, Kansas, now the SSPX's flagship school" width="2856" height="1607" loading="lazy">
       <figcaption class="caption">{{ home.why.caption }}</figcaption>
     </figure>
