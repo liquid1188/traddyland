@@ -22,8 +22,15 @@ description: "Support Traddyland: the second book, the screenplay, the podcast, 
     <div>
       <h2>Give</h2>
       <p class="lede">Whether it's the cost of a cup of coffee or something more, every contribution goes to the writing, the recording, and the mail.</p>
-      <a class="btn" href="mailto:{{ site.email }}?subject=Supporting%20Traddyland" style="background:#fff;color:var(--dusk);border-color:#fff">Get in touch to give</a>
-      <p class="caption" style="margin-top:1rem">A one-click donation link is being set up and will replace this button.</p>
+      <div class="give-btns">
+        {%- if site.stripeDonate %}<a class="btn" href="{{ site.stripeDonate }}" target="_blank" rel="noopener" style="background:#fff;color:var(--dusk);border-color:#fff">Donate by card</a>{% else %}<span class="btn is-pending" aria-disabled="true" style="background:#fff;color:var(--dusk);border-color:#fff">Donate by card</span>{% endif %}
+        {%- if site.paypalDonate %}<a class="btn ghost" href="{{ site.paypalDonate }}" target="_blank" rel="noopener">Donate with PayPal</a>{% else %}<span class="btn ghost is-pending" aria-disabled="true">Donate with PayPal</span>{% endif %}
+      </div>
+      {%- if not site.stripeDonate and not site.paypalDonate %}
+      <p class="caption" style="margin-top:1rem">Online giving opens soon. Until then, <a href="mailto:{{ site.email }}?subject=Supporting%20Traddyland" style="color:inherit">write to Lou</a> and he will reply with how to give.</p>
+      {%- else %}
+      <p class="caption" style="margin-top:1rem">Payments are handled securely by {% if site.stripeDonate %}Stripe{% endif %}{% if site.stripeDonate and site.paypalDonate %} and {% endif %}{% if site.paypalDonate %}PayPal{% endif %}. Gifts to Traddyland are not tax-deductible.</p>
+      {%- endif %}
     </div>
     <div>
       <p>The most useful support is still free: an honest review on Amazon, and a copy handed to someone who needs it.</p>

@@ -404,3 +404,7 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .reel-modal-stage iframe { width: 100%; height: 100%; border: 0; border-radius: 12px; background: #000; }
 .reel-modal-close { position: absolute; top: .75rem; right: 1rem; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255,255,255,.6); background: transparent; color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; }
 .reel-modal-close:hover { border-color: var(--gold); color: var(--gold); }
+
+/* donate buttons on the Support page */
+.give-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn.is-pending { opacity: .55; cursor: not-allowed; }
