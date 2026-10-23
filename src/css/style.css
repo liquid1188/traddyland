@@ -457,8 +457,8 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 @media (max-width: 860px) { .why-fig img { min-height: 0; height: auto; aspect-ratio: 16 / 10; } }
 
 /* wallpaper */
-body { background: var(--paper) url("/images/pattern/paper.svg") repeat; background-size: 64px 64px; }
-.band.dusk, .site-foot { background-image: url("/images/pattern/dusk.svg"); background-size: 64px 64px; }
+body.home { background: var(--paper) url("/images/pattern/paper.svg") repeat; background-size: 64px 64px; }
+body.home .band.dusk { background-image: url("/images/pattern/dusk.svg"); background-size: 64px 64px; }
 .band.white, .press-strip { background-image: none; }
 /* As featured in */
 .press-strip .wrap { display: block; padding-top: 2.2rem; padding-bottom: 2.4rem; }
