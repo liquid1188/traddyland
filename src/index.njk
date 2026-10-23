@@ -64,6 +64,14 @@ description: "Traddyland is Lou Massett's memoir of growing up inside the Societ
   </div>
 </section>
 
+<section class="band dusk on-dark">
+  <div class="wrap">
+    <div class="band-head"><h2>A first look at the book</h2></div>
+    <video class="feature" controls preload="none" poster="/images/video-first-look.jpg" width="1920" height="1080"><source src="/video/first-look.mp4" type="video/mp4"></video>
+    <p class="caption">A short introduction to the story, the family behind it, and the questions it asks.</p>
+  </div>
+</section>
+
 <section class="band">
   <div class="wrap two-col">
     <img class="portrait" src="/images/lou-massett.jpg" alt="Lou Massett" width="724" height="1086" loading="lazy" style="max-width:420px">
@@ -76,56 +84,14 @@ description: "Traddyland is Lou Massett's memoir of growing up inside the Societ
   </div>
 </section>
 
-<section class="band dusk on-dark">
-  <div class="wrap">
-    <div class="band-head"><h2>A first look at the book</h2></div>
-    <video class="feature" controls preload="none" poster="/images/video-first-look.jpg" width="1920" height="1080"><source src="/video/first-look.mp4" type="video/mp4"></video>
-    <p class="caption">A short introduction to the story, the family behind it, and the questions it asks.</p>
-  </div>
-</section>
-
 {%- if reels and reels.length %}
 <section class="band dusk on-dark reels-band">
-  <div class="wrap reels-grid">
-    <div>
-      <p class="kicker">Short clips</p>
-      <h2>Lou, in a minute or less</h2>
-      <p class="lede" style="color:rgba(255,255,255,.8)">Quick takes on the SSPX, traditionalism, and leaving, cut from Lou's interviews and posted on YouTube and Facebook.</p>
-      <a class="textlink" href="/videos/">See all the clips →</a>
-    </div>
+  <div class="wrap">
+    <div class="band-head"><div><p class="kicker">Short clips</p><h2>Clips from Lou's interviews</h2></div><a class="textlink" href="/videos/">See all the clips →</a></div>
     {%- set mode = "carousel" %}{% include "reels.njk" %}
   </div>
 </section>
 {%- endif %}
-
-{%- for v in videos %}{% if v.spotlight %}
-<section class="band white spotlight">
-  <div class="wrap spotlight-grid">
-    <div class="vframe"><iframe src="{{ v.embed }}" title="{{ v.title }}" loading="lazy" allowfullscreen allow="accelerometer; encrypted-media; picture-in-picture"></iframe></div>
-    <div>
-      <p class="kicker">Featured on {{ v.show }}</p>
-      <h3>{{ v.title }}</h3>
-      {% if v.note %}<p class="caption">{{ v.note }}</p>{% endif %}
-      {% if v.segmentUrl %}<a class="textlink" href="{{ v.segmentUrl }}">{{ v.segmentLabel or "Jump to Lou's segment" }} →</a>{% else %}<a class="textlink" href="{{ v.url }}">Watch on YouTube →</a>{% endif %}
-    </div>
-  </div>
-</section>
-{% endif %}{%- endfor %}
-
-<section class="band paper-2">
-  <div class="wrap">
-    <div class="band-head"><h2>In the media</h2><a class="textlink" href="/videos/">All the videos →</a></div>
-    <div class="video-list home-videos">
-    {%- for v in videos %}{% if v.featured %}
-      <article class="video-item">
-        <div class="vframe"><iframe src="{{ v.embed }}" title="{{ v.title }}" loading="lazy" allowfullscreen allow="accelerometer; encrypted-media; picture-in-picture"></iframe></div>
-        <h3><a href="{{ v.url }}">{{ v.title }}</a></h3>
-        <p class="meta">{{ v.show }} · {{ v.date }}</p>
-      </article>
-    {% endif %}{%- endfor %}
-    </div>
-  </div>
-</section>
 
 <section class="band white">
   <div class="wrap two-col">
@@ -135,6 +101,32 @@ description: "Traddyland is Lou Massett's memoir of growing up inside the Societ
       <a class="textlink" href="/podcast/">About the podcast →</a>
     </div>
     <img src="/images/podcast-are-you-serious.jpg" alt="Are You Serious? podcast artwork" width="1024" height="1024" loading="lazy" style="width:100%;max-width:380px;justify-self:center">
+  </div>
+</section>
+
+<section class="band paper-2 spotlight media-band">
+  <div class="wrap">
+    <div class="band-head"><h2>In the media</h2><a class="textlink" href="/videos/">All the videos →</a></div>
+    {%- for v in videos %}{% if v.spotlight %}
+    <div class="spotlight-grid media-lead">
+      <div class="vframe"><iframe src="{{ v.embed }}" title="{{ v.title }}" loading="lazy" allowfullscreen allow="accelerometer; encrypted-media; picture-in-picture"></iframe></div>
+      <div>
+        <p class="kicker">Featured on {{ v.show }}</p>
+        <h3>{{ v.title }}</h3>
+        {% if v.note %}<p class="caption">{{ v.note }}</p>{% endif %}
+        {% if v.segmentUrl %}<a class="textlink" href="{{ v.segmentUrl }}">{{ v.segmentLabel or "Jump to Lou's segment" }} →</a>{% else %}<a class="textlink" href="{{ v.url }}">Watch on YouTube →</a>{% endif %}
+      </div>
+    </div>
+    {%- endif %}{% endfor %}
+    <div class="video-list home-videos">
+    {%- for v in videos %}{% if v.featured %}
+      <article class="video-item">
+        <div class="vframe"><iframe src="{{ v.embed }}" title="{{ v.title }}" loading="lazy" allowfullscreen allow="accelerometer; encrypted-media; picture-in-picture"></iframe></div>
+        <h3><a href="{{ v.url }}">{{ v.title }}</a></h3>
+        <p class="meta">{{ v.show }} · {{ v.date }}</p>
+      </article>
+    {% endif %}{%- endfor %}
+    </div>
   </div>
 </section>
 

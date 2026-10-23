@@ -1,15 +1,16 @@
 {#- Lou's short vertical videos (YouTube Shorts and Facebook reels).
     mode "row": small previews on one line that scrolls sideways.
-    mode "carousel": one at a time with arrows, rotating until someone
-    touches it. Nothing loads from YouTube or Facebook until one is pressed. -#}
+    mode "carousel": a centred strip of same-size previews; the middle one
+    is the one to watch, arrows at the sides and below move it. Nothing loads from YouTube or Facebook until one is pressed. -#}
 {%- if reels and reels.length %}
-<div class="reels reels-{{ mode }}"{% if mode == "carousel" %} data-rotate="7000"{% endif %}>
-  {%- if mode == "row" %}<button type="button" class="reels-scroll reels-back" aria-label="Scroll back">&#8249;</button>{% endif %}
+<div class="reels reels-{{ mode }}"{% if mode == "carousel" %} data-carousel{% endif %}>
+  {%- if mode == "row" %}<button type="button" class="reels-scroll reels-back" aria-label="Scroll back">&#8249;</button>{% else %}<button type="button" class="reels-side reels-prev" aria-label="Previous video">&#8249;</button>
+  <div class="reels-viewport">{% endif %}
   <ul class="reels-track">
   {%- for r in reels %}
     {%- set link = ("https://www.youtube.com/shorts/" + r.id) if r.platform == "youtube" else ("https://www.facebook.com/reel/" + r.id) %}
     {%- set thumb = r.thumb or (("https://i.ytimg.com/vi/" + r.id + "/hqdefault.jpg") if r.platform == "youtube" else ("/images/reels/fb-" + r.id + ".jpg")) %}
-    <li class="reel"{% if mode == "carousel" and not loop.first %} hidden{% endif %}>
+    <li class="reel">
       <button type="button" class="reel-play" data-platform="{{ r.platform }}" data-id="{{ r.id }}" data-title="{{ r.title or 'Lou Massett' }}" aria-label="Play{% if r.title %}: {{ r.title }}{% else %} this video{% endif %}">
         <img src="{{ thumb }}" alt="" loading="lazy">
         <span class="reel-icon" aria-hidden="true"></span>
@@ -19,7 +20,8 @@
     </li>
   {%- endfor %}
   </ul>
-  {%- if mode == "row" %}<button type="button" class="reels-scroll reels-fwd" aria-label="Scroll forward">&#8250;</button>{% endif %}
+  {%- if mode == "row" %}<button type="button" class="reels-scroll reels-fwd" aria-label="Scroll forward">&#8250;</button>{% else %}</div>
+  <button type="button" class="reels-side reels-next" aria-label="Next video">&#8250;</button>{% endif %}
   {%- if mode == "carousel" and reels.length > 1 %}
   <div class="reels-nav">
     <button type="button" class="reels-prev" aria-label="Previous video">&#8249;</button>
@@ -61,24 +63,40 @@
     var btn = box.querySelector("." + p[0]);
     if (btn) btn.addEventListener("click", function () { track.scrollBy({ left: p[1] * track.clientWidth * 0.8, behavior: "smooth" }); });
   });
-  if (!box.dataset.rotate) return;
+  if (!box.hasAttribute("data-carousel")) return;
+  var view = box.querySelector(".reels-viewport");
   var count = box.querySelector(".reels-count");
+  function place() {
+    var w = items[0].offsetWidth, gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    var x = view.clientWidth / 2 - (i * (w + gap) + w / 2);
+    track.style.transform = "translateX(" + x + "px)";
+  }
   function show(n) {
-    // A video that is playing goes back to its preview when it rotates away.
+    // A video that is playing goes back to its preview when it leaves the middle.
     var fr = items[i].querySelector(".reel-frame");
     if (fr && fr._preview) fr.replaceWith(fr._preview);
     i = (n + items.length) % items.length;
-    items.forEach(function (el, k) { el.hidden = k !== i; });
+    items.forEach(function (el, k) {
+      el.classList.toggle("is-current", k === i);
+      var b = el.querySelector(".reel-play");
+      if (b) b.tabIndex = k === i ? 0 : -1;
+    });
     if (count) count.textContent = (i + 1) + " / " + items.length;
+    place();
   }
-  var prev = box.querySelector(".reels-prev"), next = box.querySelector(".reels-next");
-  if (prev) prev.addEventListener("click", function () { stop(); show(i - 1); });
-  if (next) next.addEventListener("click", function () { stop(); show(i + 1); });
-  if (items.length > 1 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    timer = setInterval(function () { show(i + 1); }, +box.dataset.rotate);
-    box.addEventListener("pointerenter", stop, { once: true });
-    box.addEventListener("focusin", stop, { once: true });
-  }
+  // Pressing a side preview brings it to the middle instead of playing it.
+  box.addEventListener("click", function (e) {
+    var li = e.target.closest(".reel");
+    if (li && !li.classList.contains("is-current")) { e.stopImmediatePropagation(); e.preventDefault(); show(items.indexOf(li)); }
+  }, true);
+  [].forEach.call(box.querySelectorAll(".reels-prev"), function (b) { b.addEventListener("click", function () { show(i - 1); }); });
+  [].forEach.call(box.querySelectorAll(".reels-next"), function (b) { b.addEventListener("click", function () { show(i + 1); }); });
+  box.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") show(i - 1);
+    if (e.key === "ArrowRight") show(i + 1);
+  });
+  window.addEventListener("resize", place);
+  show(0);
 })();
 </script>
 {%- endif %}

@@ -1,0 +1,17 @@
+---
+layout: base.njk
+title: Community
+permalink: /community/
+description: "The Traddyland reader community on Telegram is coming soon."
+---
+{%- if site.telegram %}
+<div class="wrap page-head"><h1>Join the community</h1><p class="lede">Readers talk with Lou and each other in the Traddyland Readers group on Telegram. It is free, it works on any phone or computer, and you can leave anytime.</p><p><a class="btn" href="{{ site.telegram }}" target="_blank" rel="noopener">Join the group on Telegram</a></p></div>
+{%- else %}
+<div class="wrap page-head">
+  <p class="kicker">Coming soon</p>
+  <h1>The Traddyland community</h1>
+  <p class="lede">A Telegram group where readers can talk with Lou and with each other about the book, the SSPX, and life after leaving. It is not open yet.</p>
+  <p>Leave your email below and you will hear when it opens. In the meantime, the <a href="/forum/">forum</a> is open for posts and comments.</p>
+</div>
+{%- endif %}
+{% include "signup.njk" %}
