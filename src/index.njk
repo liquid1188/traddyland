@@ -84,6 +84,20 @@ description: "Traddyland is Lou Massett's memoir of growing up inside the Societ
   </div>
 </section>
 
+{%- if reels and reels.length %}
+<section class="band dusk on-dark reels-band">
+  <div class="wrap reels-grid">
+    <div>
+      <p class="kicker">Short clips</p>
+      <h2>Lou, in a minute or less</h2>
+      <p class="lede" style="color:rgba(255,255,255,.8)">Quick takes on the SSPX, traditionalism, and leaving, cut from Lou's interviews and posted on YouTube and Facebook.</p>
+      <a class="textlink" href="/videos/">See all the clips →</a>
+    </div>
+    {%- set mode = "carousel" %}{% include "reels.njk" %}
+  </div>
+</section>
+{%- endif %}
+
 {%- for v in videos %}{% if v.spotlight %}
 <section class="band white spotlight">
   <div class="wrap spotlight-grid">

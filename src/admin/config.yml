@@ -150,6 +150,7 @@ collections:
               - { name: quote, label: Quote, widget: text }
               - { name: who, label: Who said it }
               - { name: featured, label: Featured on the homepage, widget: boolean, required: false, default: false }
+              - { name: spotlight, label: "Featured video (top of the Videos page and the homepage spotlight)", widget: boolean, required: false, default: false, hint: Turn this on for one video only. }
               - { name: spotlight, label: Homepage spotlight (its own large section; use for one video at a time), widget: boolean, required: false, default: false }
               - { name: segmentLabel, label: "Spotlight link text (e.g. Lou's interview starts at 14:55)", required: false }
               - { name: segmentUrl, label: "Spotlight link to Lou's segment (YouTube link with &t=SECONDSs)", required: false }
@@ -203,6 +204,22 @@ collections:
                 fields:
                   - { name: title, label: Clip title }
                   - { name: url, label: Link }
+
+      - name: reels
+        label: Short clips (Shorts and reels)
+        file: src/_data/reels.json
+        description: "Lou's short vertical videos. They show in a row on the Videos page and one at a time in the homepage carousel, in this order. Drag to reorder."
+        fields:
+          - name: items
+            label: Clips
+            widget: list
+            root: true
+            summary: "{{fields.platform}} · {{fields.title}}{{fields.id}}"
+            fields:
+              - { name: platform, label: Where it is posted, widget: select, options: [youtube, facebook], default: youtube }
+              - { name: id, label: Video ID, hint: "YouTube: the letters after /shorts/ in the link. Facebook: the number after /reel/ in the link." }
+              - { name: title, label: Title, required: false, hint: Shown under the preview. Leave empty to show no title. }
+              - { name: thumb, label: Preview image, widget: image, required: false, hint: "Needed for Facebook reels (Facebook previews expire). YouTube previews load on their own." }
 
       - name: buy
         label: Where to buy
