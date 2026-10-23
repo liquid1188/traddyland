@@ -390,3 +390,6 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .media-lead { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--rule); }
 .band.media-band { padding: clamp(3.5rem, 7vw, 6rem) 0; }
 .crow .soon { font-style: normal; font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--gold); display: block; margin-top: .15rem; white-space: nowrap; }
+
+/* breathing room between each video and its title */
+.video-item h3, .home-videos .video-item h3 { margin-top: 1.1rem !important; }
