@@ -408,3 +408,33 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 /* donate buttons on the Support page */
 .give-btns { display: flex; flex-wrap: wrap; gap: .75rem; }
 .btn.is-pending { opacity: .55; cursor: not-allowed; }
+
+/* support page: one section, uses beside the give card */
+.support-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.support-uses .kicker { margin: 0 0 .6rem; }
+.support-uses ol { list-style: none; counter-reset: use; margin: 0; padding: 0; }
+.support-uses li { counter-increment: use; display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); column-gap: .4rem; padding: 1.1rem 0; border-top: 1px solid var(--rule); }
+.support-uses li:last-child { border-bottom: 1px solid var(--rule); }
+.support-uses li::before { content: counter(use); grid-row: 1 / span 2; font-family: var(--display); font-size: 1.7rem; line-height: 1.1; color: var(--red); }
+.support-uses h2 { font-size: 1.45rem; margin: 0 0 .3rem; }
+.support-uses p { margin: 0; color: var(--ink-2); }
+.give-card { background: var(--dusk); color: #fff; border-radius: 14px; padding: clamp(1.6rem, 3vw, 2.2rem); position: sticky; top: 1.5rem; box-shadow: 0 20px 40px -24px rgba(28,42,68,.6); }
+.give-card h2 { color: #fff; margin: 0 0 .5rem; }
+.give-card p { color: rgba(255,255,255,.86); margin: 0 0 1.1rem; }
+.give-card .caption { font-size: .88rem; color: rgba(255,255,255,.62); margin: 1rem 0 0; }
+.give-check { margin-top: 1.3rem; padding-top: 1.1rem; border-top: 1px solid rgba(255,255,255,.15); }
+.give-check p { margin: 0 0 .5rem; font-size: .98rem; }
+.give-check .give-k { color: var(--gold); font-weight: 600; letter-spacing: .04em; font-size: .9rem; margin-bottom: .35rem; }
+.support-free { display: flex; align-items: center; justify-content: space-between; gap: 1rem 2rem; flex-wrap: wrap; margin-top: 2.2rem; }
+.support-free p { margin: 0; color: var(--ink-2); max-width: 40rem; }
+.support-free .btn.ghost { color: var(--ink); }
+@media (max-width: 860px) { .support-grid { grid-template-columns: 1fr; } .give-card { position: static; } }
+
+.contact-ways { display: grid; gap: .6rem; margin: 0 0 2rem; }
+.cway { display: flex; align-items: center; gap: .9rem; padding: .85rem 1rem; background: var(--white); border: 1px solid var(--rule); border-radius: 10px; text-decoration: none; color: var(--ink); transition: border-color .15s; }
+.cway:hover { border-color: var(--red); }
+.cway svg { width: 22px; height: 22px; flex: none; color: var(--red); }
+.cway span { display: grid; line-height: 1.3; font-weight: 600; }
+.cway small { font-weight: 600; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
+.cway .soon { font-style: normal; font-weight: 600; font-size: .75rem; color: var(--gold); margin-left: .3rem; }
+.cway b{font-weight:600}

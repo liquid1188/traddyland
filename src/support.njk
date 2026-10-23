@@ -8,36 +8,35 @@ description: "Support Traddyland: the second book, the screenplay, the podcast, 
   <h1>Support the work</h1>
   <p class="lede">The book pays for itself. What comes next doesn't yet. If Traddyland has been worth something to you, this is where a gift goes.</p>
 </div>
-<section class="band" style="padding-top:1.5rem">
-  <div class="wrap">
-    <div class="needs">
-      <div><h2>The second book</h2><p>Traddyland ends where Lou walks out. The next book is about the thirty years after, and about the people still inside. Writing time is the cost.</p></div>
-      <div><h2>The screenplay</h2><p>A boy on a plane to Kansas, a town full of secrets, a family split by a schism Rome had already named. The story was built for the screen, and a screenplay is in development.</p></div>
-      <div><h2>The podcast and the letters</h2><p>Are You Serious? launches this fall. And a lot of the mail Lou gets is from people raised in the Society who have never said so out loud. Answering it takes time, and every letter is answered.</p></div>
+<section class="band support" style="padding-top:1rem">
+  <div class="wrap support-grid">
+    <div class="support-uses">
+      <p class="kicker">Where a gift goes</p>
+      <ol>
+        <li><h2>The second book</h2><p>Traddyland ends where Lou walks out. The next book is about the thirty years after, and about the people still inside. Writing time is the cost.</p></li>
+        <li><h2>The screenplay</h2><p>A boy on a plane to Kansas, a town full of secrets, a family split by a schism Rome had already named. The story was built for the screen, and a screenplay is in development.</p></li>
+        <li><h2>The podcast and the letters</h2><p>Are You Serious? launches this fall. And a lot of the mail Lou gets is from people raised in the Society who have never said so out loud. Answering it takes time, and every letter is answered.</p></li>
+      </ol>
     </div>
-  </div>
-</section>
-<section class="band dusk on-dark">
-  <div class="wrap two-col">
-    <div>
+    <aside class="give-card on-dark" id="give">
       <h2>Give</h2>
-      <p class="lede">Whether it's the cost of a cup of coffee or something more, your gift helps Lou keep writing and keep telling this story.</p>
+      <p>Whether it's the cost of a cup of coffee or something more, your gift helps Lou keep writing and keep telling this story.</p>
       <div class="give-btns">
         {%- if site.stripeDonate %}<a class="btn" href="{{ site.stripeDonate }}" target="_blank" rel="noopener" style="background:#fff;color:var(--dusk);border-color:#fff">Donate by card</a>{% else %}<span class="btn is-pending" aria-disabled="true" style="background:#fff;color:var(--dusk);border-color:#fff">Donate by card</span>{% endif %}
         {%- if site.paypalDonate %}<a class="btn ghost" href="{{ site.paypalDonate }}" target="_blank" rel="noopener">Donate with PayPal</a>{% else %}<span class="btn ghost is-pending" aria-disabled="true">Donate with PayPal</span>{% endif %}
       </div>
-      {%- if site.checkAddress %}
-      <div class="give-check"><p class="kicker" style="margin:1.5rem 0 .35rem">Give by check</p><p style="margin:0">Mail a check to<br>{{ site.checkAddress | escape | replace("\n", "<br>") | safe }}</p>{% if site.phone %}<p style="margin:.6rem 0 0">Questions? Call Lou at <a href="tel:+1{{ site.phone | replace("-", "") }}" style="color:inherit">{{ site.phone }}</a>.</p>{% endif %}</div>
-      {%- endif %}
       {%- if not site.stripeDonate and not site.paypalDonate %}
-      <p class="caption" style="margin-top:1rem">Online giving opens soon. Until then, <a href="mailto:{{ site.email }}?subject=Supporting%20Traddyland" style="color:inherit">write to Lou</a> and he will reply with how to give.</p>
+      <p class="caption">Online giving opens soon. Until then, <a href="mailto:{{ site.email }}?subject=Supporting%20Traddyland" style="color:inherit">write to Lou</a> and he will reply with how to give.</p>
       {%- else %}
-      <p class="caption" style="margin-top:1rem">Payments are handled securely by {% if site.stripeDonate %}Stripe{% endif %}{% if site.stripeDonate and site.paypalDonate %} and {% endif %}{% if site.paypalDonate %}PayPal{% endif %}. Gifts to Traddyland are not tax-deductible.</p>
+      <p class="caption">Payments are handled securely by {% if site.stripeDonate %}Stripe{% endif %}{% if site.stripeDonate and site.paypalDonate %} and {% endif %}{% if site.paypalDonate %}PayPal{% endif %}. Gifts to Traddyland are not tax-deductible.</p>
       {%- endif %}
-    </div>
-    <div>
-      <p>The most useful support is still free: an honest review on Amazon, and a copy handed to someone who needs it.</p>
-      <a class="btn ghost" href="{{ site.amazon }}">Review on Amazon</a>
-    </div>
+      {%- if site.checkAddress %}
+      <div class="give-check"><p class="give-k">Give by check</p><p>Mail a check to<br>{{ site.checkAddress | escape | replace("\n", "<br>") | safe }}</p>{% if site.phone %}<p>Questions? Call Lou at <a href="tel:+1{{ site.phone | replace("-", "") }}" style="color:inherit">{{ site.phone }}</a>.</p>{% endif %}</div>
+      {%- endif %}
+    </aside>
+  </div>
+  <div class="wrap support-free">
+    <p>The most useful support is still free: an honest review on Amazon, and a copy handed to someone who needs it.</p>
+    <a class="btn ghost" href="{{ site.amazon }}">Review on Amazon</a>
   </div>
 </section>
