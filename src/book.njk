@@ -21,6 +21,7 @@ description: "Traddyland: Memoir of a Radical Traditional Catholic. Synopsis, pr
           {%- for f in book.facts %}<dt>{{ f.label }}</dt><dd>{{ f.value }}</dd>{% endfor %}
         </dl>
         <a class="btn" href="{{ site.amazon }}" style="display:block;text-align:center;margin-top:1.2rem">Buy on Amazon</a>
+        {% if site.amazonSpanish %}<p lang="es" style="text-align:center;margin:.8rem 0 0;font-size:.95rem">En español: <a href="{{ site.amazonSpanish }}">tapa blanda</a>{% if site.amazonSpanishKindle %} · <a href="{{ site.amazonSpanishKindle }}">Kindle</a>{% endif %}</p>{% endif %}
       </div>
     </div>
   </div>

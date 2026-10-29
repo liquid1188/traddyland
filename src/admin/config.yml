@@ -265,6 +265,8 @@ collections:
           - { name: sendFrom, label: "Send-from address (traddyland.com)", required: false, hint: "Must stay a traddyland.com address; it is the sender on the Act I email." }
           - { name: amazon, label: Amazon link (paperback) }
           - { name: amazonKindle, label: Amazon link (Kindle) }
+          - { name: amazonSpanish, label: Amazon link (Spanish paperback), required: false }
+          - { name: amazonSpanishKindle, label: Amazon link (Spanish Kindle), required: false }
           - name: social
             label: Social links
             widget: object
