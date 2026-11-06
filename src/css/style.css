@@ -475,3 +475,27 @@ body:not(.home) .site-head { position: static; background: var(--dusk); }
 .press-strip .label { width: 100%; flex-basis: auto; justify-content: center; }
 .press-strip img[alt^="Homiletic"] { height: 42px; }
 .press-strip .label { max-width: none; }
+
+/* Footer v3: compact horizontal layout, solid ground so it does not repeat the patterned band above */
+.site-foot.v3 { background: #121a2c; background-image: none; }
+.site-foot.v3 .f-top { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem 3rem; flex-wrap: wrap; padding-top: 2.2rem; padding-bottom: 1.4rem; }
+.site-foot.v3 .f-brand { flex: 1 1 0; min-width: 0; display: flex; align-items: baseline; gap: .4rem 1.2rem; flex-wrap: wrap; }
+.site-foot.v3 .foot-brand { margin: 0; }
+.site-foot.v3 .foot-tag { margin: 0; max-width: none; font-size: .95rem; color: rgba(255,255,255,.75); }
+.site-foot.v3 .foot-tag a { display: inline; padding: 0; color: #fff; text-decoration: underline; text-decoration-color: rgba(255,255,255,.35); }
+.site-foot.v3 .f-mid { display: flex; justify-content: space-between; align-items: center; gap: 1rem 2.5rem; flex-wrap: wrap; padding-top: 1.2rem; padding-bottom: 1.4rem; border-top: 1px solid rgba(255,255,255,.1); }
+.site-foot.v3 .f-links { display: flex; flex-wrap: wrap; gap: .3rem 1.4rem; flex: 1 1 520px; }
+.site-foot.v3 .f-links a { display: inline-block; padding: .2rem 0; font-size: .95rem; color: rgba(255,255,255,.85); text-decoration: none; }
+.site-foot.v3 .f-links a:hover { color: var(--foot-accent); }
+.site-foot.v3 .f-connect { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.2rem; }
+.site-foot.v3 .crow { padding: .2rem 0; font-size: .93rem; align-items: center; }
+.site-foot.v3 .crow svg { margin-top: 0; }
+.site-foot.v3 .socials { margin-top: 0; }
+.site-foot.v3 .soc { width: 34px; height: 34px; }
+.site-foot.v3 .foot-bottom { margin: 0 auto; padding-top: 1rem; padding-bottom: 1.2rem; }
+@media (max-width: 700px) { .site-foot.v3 .f-top, .site-foot.v3 .f-mid { flex-direction: column; align-items: flex-start; } .site-foot.v3 .f-links { flex-basis: auto; } }
+.archive-box { margin: 1.6rem 0; padding: 1.2rem 1.3rem; border: 1px solid var(--rule); border-left: 3px solid var(--gold, #d4a94a); background: var(--white, #fff); }
+.archive-box .kicker { margin: 0 0 .3rem; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.archive-box h2 { font-size: 1.3rem; margin: 0 0 .5rem; }
+.archive-box p { margin: 0 0 .7rem; }
+.site-foot.v3 .foot-ctas { flex: none; }

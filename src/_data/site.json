@@ -28,5 +28,12 @@
   "stripeDonate": "",
   "paypalDonate": "",
   "checkAddress": "Louis Massett\n611 Shackleton Point Rd\nBridgeport, NY 13030",
-  "phone": "540-631-5529"
+  "phone": "540-631-5529",
+  "archive": {
+    "show": true,
+    "title": "The SSPX Archive",
+    "text": "An independent archive of reporting and records on abuse and cover-up in the Society of St. Pius X, including court documents, police reports, and survivor testimony. Traddyland does not run it.",
+    "url": "https://sspxarchive.com",
+    "label": "Visit sspxarchive.com"
+  }
 }

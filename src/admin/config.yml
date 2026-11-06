@@ -256,6 +256,16 @@ collections:
         label: Site settings
         file: src/_data/site.json
         fields:
+          - name: archive
+            label: Background page, archive box
+            widget: object
+            hint: "The box under Lou's note on the Background reading page."
+            fields:
+              - { name: show, label: Show the box, widget: boolean, default: true }
+              - { name: title, label: Title }
+              - { name: text, label: Text, widget: text }
+              - { name: url, label: Link }
+              - { name: label, label: Link text }
           - { name: web3formsKey, label: Form access key (Web3Forms), required: false, hint: "Paste the access key from the Web3Forms email here. Every form on the site uses it; messages go to the email that key was made for." }
           - { name: name, label: Site name }
           - { name: author, label: Author name as shown }

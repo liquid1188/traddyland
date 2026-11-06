@@ -12,6 +12,14 @@ description: "Reporting on the Society of St. Pius X and St. Marys, Kansas, from
     <aside class="reading-side">
       <p class="lede">The reporting behind the book. Four decades of coverage of the Society of St. Pius X and the town of St. Marys, Kansas, selected by Lou.</p>
       <p>Start with the 1998 <em>Times</em> piece on St. Marys after Oklahoma City, then the 2020 Kansas City Star report on the KBI investigation. Together they frame what the book describes from the inside.</p>
+      {%- if site.archive and site.archive.show %}
+      <div class="archive-box">
+        <p class="kicker">Further documentation</p>
+        <h2>{{ site.archive.title }}</h2>
+        <p>{{ site.archive.text }}</p>
+        <a class="textlink" href="{{ site.archive.url }}" target="_blank" rel="noopener">{{ site.archive.label }} →</a>
+      </div>
+      {%- endif %}
       <p><a class="textlink" href="/contact/">Know a piece that belongs here? →</a></p>
     </aside>
     <ul class="news">
